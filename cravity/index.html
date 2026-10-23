@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="./favicon.png">
+  <title>CRAVITY FANCHANT</title> 
+
+  <script>
+  if (sessionStorage.getItem("songListScrollY") !== null) {
+    document.documentElement.style.visibility = "hidden";
+  }
+</script>
+
+  <style>
+    @font-face {
+  font-family: "Gmarket Sans";
+  src: url("./fonts/GmarketSansTTFLight.ttf") format("truetype");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Gmarket Sans";
+  src: url("./fonts/GmarketSansTTFMedium.ttf") format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Gmarket Sans";
+  src: url("./fonts/GmarketSansTTFBold.ttf") format("truetype");
+  font-weight: 700;
+}
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+  margin: 0;
+  font-family: "Archivo Black", "Gmarket Sans", sans-serif;
+  background: #f2f2f2;
+  color: #2C2C2E;
+}
+
+    /* 首頁照片輪播 */
+.hero-carousel {
+  position: relative;
+  width: calc(100% - 40px);
+  max-width: 724px;
+  height: 274px;
+  margin: 24px auto;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #E5E5E5;
+}
+
+.fanchant-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 0px;
+  color: #2C2C2E;
+  margin: 24px 0 -8px;
+}
+
+/* 手機版高度 */
+@media (max-width: 600px) {
+  .hero-carousel {
+    width: calc(100% - 28px);
+    height: 137px;
+    border-radius: 14px;
+  }
+}
+
+.carousel-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease;
+}
+
+.carousel-track img {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 下方切換圓點 */
+.carousel-dots {
+  position: absolute;
+  bottom: 14px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+}
+
+.carousel-dots .dot {
+  width: 6px;
+  height: 6px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.65);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.carousel-dots .dot.active {
+  background: #ffffff;
+  transform: scale(1.25);
+}
+
+    main {
+      max-width: 760px;
+      margin: 32px auto;
+      padding: 0 14px;
+    }
+
+    #search {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 24px;
+      border: 1px solid #FFFFFF;
+      border-radius: 12px;
+      font-size: 16px;
+    }
+
+    
+.page-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.page-tabs .tab {
+  flex: 1;
+  padding: 13px;
+  border: 1px solid #e5dcf4;
+  border-radius: 14px;
+  background: #D9D9DC;
+  color: #2C2C2E;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+
+  /* 新增：讓圖示和英文置中排列 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.page-tabs .tab.active {
+  background: #3A3A3C;
+  border-color: #3A3A3C;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.page-tabs .tab svg {
+  width: 21px;
+  height: 21px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.page-tabs .tab:hover svg {
+  transform: scale(1.08);
+}
+
+    .song[hidden] {
+  display: none !important;
+}
+
+
+.song {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 82px;
+  color: #2C2C2E;
+  padding: 20px;
+  padding-right: 60px;
+  margin-bottom: 12px;
+  text-align: left;
+  background: #FFFFFF;
+  border: 1px solid #ebe6f5;
+  border-radius: 14px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+
+
+    .song:hover {
+      background: #FFFFFF;
+    }
+
+.song .favorite-star {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #3A3A3C;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+
+.song .favorite-star svg {
+  width: 27px;
+  height: 27px;
+  overflow: visible;
+  transition: transform 0.2s ease;
+}
+
+.song .favorite-star:hover {
+  background: #D9D9DC;
+}
+
+.song .favorite-star:hover svg {
+  transform: scale(1.1);
+}
+
+.song .favorite-star.is-favorite {
+  color: #f2bd52;
+}
+
+.song .favorite-star.is-favorite:hover {
+  background: #fff5dc;
+}
+
+
+    .song strong {
+  display: block;
+  margin-bottom: 0;
+}
+
+    .song span {
+      color: #777087;
+      font-size: 13px;
+    }
+
+    footer {
+      padding: 30px 16px;
+      text-align: center;
+      color: #898397;
+      font-size: 12px;
+    }
+    /* 全站預設字體 */
+body {
+  font-family: "Archivo Black", "Gmarket Sans", sans-serif;
+  font-weight: 500;
+}
+
+/* 英文標題、歌曲名稱和切換按鈕 */
+h1,
+h2,
+.song,
+.page-tabs .tab {
+  font-family: "Archivo Black", "Gmarket Sans", sans-serif;
+}
+
+/* 練習頁歌詞 */
+.lyric-line {
+  font-family: "Archivo Black", "Gmarket Sans", sans-serif;
+  font-weight: 900;
+}
+
+/* 底部彈出視窗：預設隱藏 */
+.link-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* 顯示彈窗 */
+.link-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 從底部滑出的白色面板 */
+.link-sheet {
+  position: absolute;
+  width: calc(100% - 40px);
+  max-width: 724px;
+  left: 50%;
+  bottom: 24px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+  padding: 12px 22px 32px;
+  background: #FFFFFF;
+  border-radius: 22px;
+  color: #2C2C2E;
+  transform: translate(-50%, 100%);
+  transition: transform 0.3s ease;
+}
+
+/* 彈窗出現時 */
+.link-overlay.show .link-sheet {
+  transform: translate(-50%, 0);
+}
+
+/* 上方拖曳提示 */
+.sheet-handle {
+  width: 42px;
+  height: 5px;
+  border-radius: 10px;
+  background: #D9D9DC;
+  margin: 0 auto 20px;
+}
+
+.link-sheet h2 {
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 0px;
+  margin: 0 0 18px;
+}
+
+/* 連結清單 */
+.official-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.official-links a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #F2F2F2;
+  color: #2C2C2E;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.official-links a:hover {
+  background: #D9D9DC;
+}
+
+.app-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-logo {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+.berriz-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: #7456E8;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  
+  <h2 class="fanchant-title">CRAVITY FANCHANT</h2>
+
+  <header class="hero-carousel">
+  <div class="carousel-track">
+    <img src="./images/muse.jpg" alt="CRAVITY 照片 1">
+    <img src="./images/muse1.jpg" alt="CRAVITY 照片 2">
+    <img src="./images/muse2.jpg" alt="CRAVITY 照片 3">
+    <img src="./images/muse3.jpg" alt="CRAVITY 照片 4">
+    <img src="./images/muse4.jpg" alt="CRAVITY 照片 5">
+    <img src="./images/muse5.jpg" alt="CRAVITY 照片 6">
+    <img src="./images/muse6.jpg" alt="CRAVITY 照片 7">
+    <img src="./images/muse7.jpg" alt="CRAVITY 照片 8">
+    <img src="./images/muse8.jpg" alt="CRAVITY 照片 9">
+    <img src="./images/muse9.jpg" alt="CRAVITY 照片 10">
+  </div>
+
+  <div class="carousel-dots">
+    <button class="dot active" type="button" aria-label="第 1 張照片"></button>
+    <button class="dot" type="button" aria-label="第 2 張照片"></button>
+    <button class="dot" type="button" aria-label="第 3 張照片"></button>
+    <button class="dot" type="button" aria-label="第 4 張照片"></button>
+    <button class="dot" type="button" aria-label="第 5 張照片"></button>
+    <button class="dot" type="button" aria-label="第 6 張照片"></button>
+    <button class="dot" type="button" aria-label="第 7 張照片"></button>
+    <button class="dot" type="button" aria-label="第 8 張照片"></button>
+    <button class="dot" type="button" aria-label="第 9 張照片"></button>
+    <button class="dot" type="button" aria-label="第 10 張照片"></button>
+  </div>
+
+</header>
+
+<!-- 官方連結底部彈窗 -->
+<div class="link-overlay" id="linkOverlay">
+  <div class="link-sheet" id="linkSheet">
+    <div class="sheet-handle"></div>
+
+    <h2 id="linkSheetTitle">CRAVITY OFFICIAL</h2>
+
+  <div class="official-links" id="officialLinks">
+  <a href="https://berriz.in/cravity/" target="_blank" rel="noopener noreferrer">Berriz</a>
+  <a href="https://www.youtube.com/@CRAVITYofficial" target="_blank" rel="noopener noreferrer">YouTube</a>
+  <a href="https://www.instagram.com/cravity_official/" target="_blank" rel="noopener noreferrer">Instagram (Official)</a>
+  <a href="https://www.instagram.com/cravingmore_?cplk=MXI0ems2MmUzOG5kdQ==" target="_blank" rel="noopener noreferrer">Instagram (Concept Photo)</a>
+  <a href="https://twitter.com/CRAVITYstarship" target="_blank" rel="noopener noreferrer">X (Official)</a>
+  <a href="https://twitter.com/CRAVITY_twt" target="_blank" rel="noopener noreferrer">X (Members)</a>
+  <a href="https://www.tiktok.com/@cravityofficial" target="_blank" rel="noopener noreferrer">TikTok</a>
+  <a href="https://weibo.com/cravity" target="_blank" rel="noopener noreferrer">Weibo</a>
+    </div>
+  </div>
+</div>
+
+  <main>
+    <input
+      id="search"
+      type="search"
+      placeholder="搜尋歌曲名稱..."
+      aria-label="搜尋歌曲"
+    >
+
+<nav class="page-tabs">
+  <button type="button" class="tab active" id="homeTab">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+  <path d="M10 18V5l10-2v13" />
+  <circle cx="7" cy="18" r="3" />
+  <circle cx="17" cy="16" r="3" />
+</svg>
+    Songs
+  </button>
+
+  <button type="button" class="tab" id="favoritesTab">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 3.5 14.7 8.9 20.7 9.8 16.4 14 17.4 20 12 17.1 6.6 20 7.6 14 3.3 9.8 9.3 8.9Z" />
+    </svg>
+    Favorites
+  </button>
+</nav>
+
+    <section id="songList">
+      <button class="song" type="button" data-song="Break all the Rules">
+        <strong>Break all the Rules</strong>
+      </button>
+
+      <button class="song" type="button" data-song="JUMPER">
+        <strong>JUMPER</strong>
+      </button>
+
+      <button class="song" type="button" data-song="Cloud 9">
+        <strong>Cloud 9</strong>
+      </button>
+
+      <button class="song" type="button" data-song="Flame">
+        <strong>Flame</strong>
+      </button>
+
+      <button class="song" type="button" data-song="Ohh Ahh">
+        <strong>Ohh Ahh</strong>
+      </button>
+
+      <button class="song" type="button" data-song="My Turn">
+        <strong>My Turn</strong>
+      </button>
+
+      <button class="song" type="button" data-song="Mammoth">
+        <strong>Mammoth</strong>
+      </button>
+
+      <button class="song" type="button" data-song="Bad Habits">
+        <strong>Bad Habits</strong>
+      </button>
+
+      <button class="song" type="button" data-song="Gas Pedal">
+        <strong>Gas Pedal</strong>
+      </button>
+
+      <button class="song" type="button" data-song="VENI VIDI VICI">
+        <strong>VENI VIDI VICI</strong>
+      </button>
+
+      <button class="song" type="button" data-song="Adrenaline">
+        <strong>Adrenaline</strong>
+      </button>
+
+      <button class="song" type="button" data-song="Maybe Baby (좋아하나봐)">
+        <strong>Maybe Baby (좋아하나봐)</strong>
+      </button>
+
+      <button class="song" type="button" data-song="PARTY ROCK">
+        <strong>PARTY ROCK</strong>
+      </button>
+
+      <button class="song" type="button" data-song="Knock Knock">
+        <strong>Knock Knock</strong>
+      </button>
+
+      <button class="song" type="button" data-song="Groovy">
+        <strong>Groovy</strong>
+      </button>
+      
+      <button class="song" type="button" data-song="Get Lifted">
+        <strong>Get Lifted</strong>
+      </button>
+
+      <button class="song" type="button" data-song="Cheese">
+        <strong>Cheese</strong>
+      </button>
+
+      <button class="song" type="button" data-song="Ready or Not">
+        <strong>Ready or Not</strong>
+      </button>
+
+      <button class="song" type="button" data-song="MEGAPHONE">
+        <strong>MEGAPHONE</strong>
+      </button>
+
+      <button class="song" type="button" data-song="Love or Die">
+        <strong>Love or Die</strong>
+      </button>
+     
+      <button class="song" type="button" data-song="C'est La Vie">
+        <strong>C'est La Vie</strong>
+      </button>
+
+      <button class="song" type="button" data-song="Now or Never">
+        <strong>Now or Never</strong>
+      </button>
+
+      <button class="song" type="button" data-song="Horizon">
+        <strong>Horizon</strong>
+      </button>
+
+      <button class="song" type="button" data-song="SET NET G0?!">
+        <strong>SET NET G0?!</strong>
+      </button>
+
+      <button class="song" type="button" data-song="SWISH">
+        <strong>SWISH</strong>
+      </button>
+
+      <button class="song" type="button" data-song="Lemonade Fever">
+        <strong>Lemonade Fever</strong>
+      </button>
+
+      <button class="song" type="button" data-song="AWAKE">
+        <strong>AWAKE</strong>
+      </button>
+
+      <button class="song" type="button" data-song="LOUDER">
+        <strong>LOUDER</strong>
+      </button>
+                                                            
+    </section>
+  </main>
+
+  <footer>
+    Made By @sslozzi
+  </footer>
+
+  <script>
+    
+const songList = document.getElementById("songList");
+
+[...songList.querySelectorAll(".song")]
+  .reverse()
+  .forEach((song) => songList.appendChild(song));
+
+    const search = document.getElementById("search");
+    const songs = document.querySelectorAll(".song");
+    
+let activeView = "home";
+
+const homeTab = document.getElementById("homeTab");
+const favoritesTab = document.getElementById("favoritesTab");
+
+function applySongFilter() {
+  const keyword = search.value.trim().toLowerCase();
+
+  songs.forEach((song) => {
+    const name = song.dataset.song.toLowerCase();
+    const matchesSearch = name.includes(keyword);
+    const isFavorite = favoriteSongs.has(song.dataset.song);
+
+    song.hidden =
+      !matchesSearch ||
+      (activeView === "favorites" && !isFavorite);
+  });
+}
+
+function switchView(view) {
+  activeView = view;
+
+  homeTab.classList.toggle("active", view === "home");
+  favoritesTab.classList.toggle("active", view === "favorites");
+
+  applySongFilter();
+}
+
+homeTab.addEventListener("click", () => switchView("home"));
+favoritesTab.addEventListener("click", () => switchView("favorites"));
+
+    console.log("搜尋功能已載入", search, songs.length);
+    
+const favoriteSongs = new Set(
+  JSON.parse(localStorage.getItem("favoriteSongs") || "[]")
+);
+
+songs.forEach((song) => {
+  const star = document.createElement("span");
+  star.className = "favorite-star";
+  function updateStar() {
+  const active = favoriteSongs.has(song.dataset.song);
+
+  star.innerHTML = `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        d="M12 3.5
+           L14.7 8.9
+           L20.7 9.8
+           L16.4 14
+           L17.4 20
+           L12 17.1
+           L6.6 20
+           L7.6 14
+           L3.3 9.8
+           L9.3 8.9 Z"
+        fill="${active ? "currentColor" : "none"}"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linejoin="round"
+        stroke-linecap="round"
+      />
+    </svg>
+  `;
+}
+updateStar();
+  star.classList.toggle(
+    "is-favorite",
+    favoriteSongs.has(song.dataset.song)
+  );
+  applySongFilter();
+  star.setAttribute("role", "button");
+  star.setAttribute("tabindex", "0");
+  star.setAttribute("aria-label", "收藏歌曲");
+
+  function toggleFavorite(event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const name = song.dataset.song;
+
+    if (favoriteSongs.has(name)) {
+      favoriteSongs.delete(name);
+    } else {
+      favoriteSongs.add(name);
+    }
+
+    localStorage.setItem(
+      "favoriteSongs",
+      JSON.stringify([...favoriteSongs])
+    );
+
+    updateStar();
+    star.classList.toggle("is-favorite", favoriteSongs.has(name));
+  }
+
+  star.addEventListener("click", toggleFavorite);
+
+  star.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      toggleFavorite(event);
+    }
+  });
+
+  song.appendChild(star);
+});
+
+
+
+search.addEventListener("input", applySongFilter);
+
+
+    songs.forEach((song) => {
+      song.addEventListener("click", () => {
+        const songName = song.dataset.song;
+    sessionStorage.setItem("songListScrollY", window.scrollY);
+    window.location.href =
+      "practice.html?song=" + encodeURIComponent(songName);
+      });
+    });
+
+    
+// 首頁照片輪播：自動播放、圓點切換、觸控滑動與滑鼠拖曳
+document.querySelectorAll(".carousel-track img").forEach((img, index) => {
+  img.addEventListener("click", () => {
+    console.log("點到第幾張照片：", index + 1);
+  });
+});
+const carouselTrack = document.querySelector(".carousel-track");
+const carouselDots = document.querySelectorAll(".carousel-dots .dot");
+const heroCarousel = document.querySelector(".hero-carousel");
+let wasSwiping = false;
+let carouselStartX = 0;
+let carouselStartY = 0;
+let gestureMoved = false;
+
+if (carouselTrack && heroCarousel) {
+  const originalSlides = Array.from(
+    carouselTrack.querySelectorAll("img")
+  );
+  const totalSlides = originalSlides.length;
+
+  if (totalSlides > 0) {
+    let currentSlide = 1;
+    let carouselTimer = null;
+    let isTransitioning = false;
+    let startX = 0;
+    let startY = 0;
+    let isDragging = false;
+
+    // 複製最後一張與第一張，實現雙向無縫循環
+const lastClone = originalSlides[totalSlides - 1].cloneNode(true);
+lastClone.draggable = false;
+carouselTrack.insertBefore(lastClone, originalSlides[0]);
+
+const firstClone = originalSlides[0].cloneNode(true);
+firstClone.draggable = false;
+carouselTrack.appendChild(firstClone);
+
+carouselTrack.querySelectorAll("img").forEach((img) => {
+  img.draggable = false;
+});
+
+// 起始位置跳過最前面的最後一張複製圖
+carouselTrack.style.transition = "none";
+carouselTrack.style.transform = "translateX(-100%)";
+
+    heroCarousel.style.touchAction = "pan-y";
+    function updateDots(index) {
+  const dotIndex = index === 0
+    ? totalSlides - 1
+    : index === totalSlides + 1
+      ? 0
+      : index - 1;
+
+  carouselDots.forEach((dot, i) => {
+    dot.classList.toggle("active", i === dotIndex);
+  });
+}
+
+    function moveToSlide(index, animate = true) {
+      carouselTrack.style.transition = animate
+        ? "transform 0.6s ease"
+        : "none";
+
+      carouselTrack.style.transform =
+        `translateX(-${index * 100}%)`;
+    }
+
+    function showSlide(index) {
+      if (isTransitioning) return;
+
+      // 確保索引在合法範圍內：包含最後的複製圖片
+      if (index < 0 || index > totalSlides + 1) return;
+
+      isTransitioning = true;
+      currentSlide = index;
+
+      moveToSlide(currentSlide, true);
+      updateDots(currentSlide);
+    }
+
+    carouselTrack.addEventListener("transitionend", (event) => {
+      if (event.propertyName !== "transform") return;
+
+      // 到達複製的第一張後，瞬間回到真正的第一張
+if (currentSlide === totalSlides + 1) {
+  currentSlide = 1;
+  moveToSlide(1, false);
+}
+
+// 到達複製的最後一張後，瞬間回到真正的最後一張
+if (currentSlide === 0) {
+  currentSlide = totalSlides;
+  moveToSlide(totalSlides, false);
+}
+
+isTransitioning = false;
+updateDots(currentSlide);
+
+      isTransitioning = false;
+    });
+
+    function startCarousel() {
+      clearInterval(carouselTimer);
+
+      carouselTimer = setInterval(() => {
+        if (!isTransitioning) {
+          showSlide(currentSlide + 1);
+        }
+      }, 4000);
+    }
+
+    // 觸控滑動與滑鼠拖曳
+    heroCarousel.addEventListener("pointerdown", (event) => {
+      if (event.pointerType === "mouse" && event.button !== 0) {
+        return;
+      }
+
+      startX = event.clientX;
+startY = event.clientY;
+carouselStartX = event.clientX;
+carouselStartY = event.clientY;
+isDragging = true;
+gestureMoved = false;
+wasSwiping = false;
+
+  
+    });
+
+    heroCarousel.addEventListener("pointermove", (event) => {
+  if (!isDragging) return;
+
+  const deltaX = event.clientX - startX;
+  const deltaY = event.clientY - startY;
+  if (Math.abs(deltaX) >= 10 || Math.abs(deltaY) >= 10) {
+  gestureMoved = true;
+}
+
+  if (
+    Math.abs(deltaX) > 8 ||
+    Math.abs(deltaY) > 8
+  ) {
+    gestureMoved = true;
+  }
+});
+
+    heroCarousel.addEventListener("pointerup", (event) => {
+      if (!isDragging) return;
+      isDragging = false;
+
+      const deltaX = event.clientX - startX;
+      const deltaY = event.clientY - startY;
+      wasSwiping =
+  Math.abs(deltaX) >= 10 ||
+  Math.abs(deltaY) >= 10;
+
+if (wasSwiping) {
+  gestureMoved = true;
+
+  setTimeout(() => {
+    gestureMoved = false;
+    wasSwiping = false;
+  }, 700);
+}
+
+      // 只處理明顯的左右滑動
+      if (
+        Math.abs(deltaX) < 40 ||
+        Math.abs(deltaX) < Math.abs(deltaY) * 1.2
+      ) {
+        return;
+      }
+
+      if (isTransitioning) return;
+
+      if (deltaX < 0) {
+  // 往左：下一張（包含最後一張循環回第一張）
+  showSlide(currentSlide + 1);
+} else {
+  // 往右：上一張（包含第一張循環回最後一張）
+  showSlide(currentSlide - 1);
+}
+
+      startCarousel();
+    });
+
+    heroCarousel.addEventListener("pointercancel", () => {
+      isDragging = false;
+    });
+
+    startCarousel();
+  }
+}
+
+
+const linkOverlay = document.getElementById("linkOverlay");
+const linkSheet = document.getElementById("linkSheet");
+const carouselImages = document.querySelectorAll(".carousel-track img");
+
+// 點擊第一張照片開啟官方連結彈窗
+if (heroCarousel && linkOverlay && linkSheet) {
+  heroCarousel.addEventListener("click", (event) => {
+  const clickedImage = event.target.closest(".carousel-track img");
+
+  if (!clickedImage) return;
+
+  if (gestureMoved || wasSwiping) {
+    event.preventDefault();
+    event.stopPropagation();
+    return;
+  }
+
+  const imageSrc = clickedImage.getAttribute("src");
+  const title = document.getElementById("linkSheetTitle");
+  const links = document.getElementById("officialLinks");
+
+  
+const appLogos = {
+  Berriz: `<span class="app-logo berriz-logo">B</span>`,
+  YouTube: `<svg class="app-logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="#FF0033" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8Z"/><path fill="#fff" d="m9.6 15.6 6.2-3.6-6.2-3.6z"/></svg>`,
+  Instagram: `<svg class="app-logo" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="igGradient" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#FFB900"/><stop offset="50%" stop-color="#FF0169"/><stop offset="100%" stop-color="#D300C5"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="6" fill="url(#igGradient)"/><rect x="6.5" y="6.5" width="11" height="11" rx="3.2" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="2.7" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="17.6" cy="6.8" r="1.1" fill="#fff"/></svg>`,
+  X: `<svg class="app-logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.6 5.5 22H2.3l7.3-8.4L1.8 2h6.5l4.5 6.8L18.9 2Zm-1.1 18h1.7L7.3 3.9H5.5L17.8 20Z"/></svg>`,
+  TikTok: `<svg class="app-logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="#25F4EE" d="M14 2h4c.3 2.2 1.5 3.8 4 4.2v4a10 10 0 0 1-4-1.3v7.2a6.2 6.2 0 1 1-6.2-6.2h.8v4.1a2.2 2.2 0 1 0 1.4 2.1V2Z"/><path fill="#FE2C55" d="M12.5 3.5h3.3c.3 2.2 1.5 3.8 4 4.2v3.1a10 10 0 0 1-4-1.3v7.2a6.2 6.2 0 0 1-6.2 6.2 6.2 6.2 0 0 1-3-11.6v4.2a2.2 2.2 0 1 0 4.4 1V3.5Z"/><path fill="#000" d="M13.3 2h3.3c.3 2.2 1.5 3.8 4 4.2v3.1a10 10 0 0 1-4-1.3v7.2a6.2 6.2 0 0 1-6.2 6.2 6.2 6.2 0 0 1-3-11.6v4.2a2.2 2.2 0 1 0 4.4 1V2Z"/></svg>`,
+  Weibo: `<svg class="app-logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="#E6162D" d="M20.5 12.2c-.6-.2-.9-.4-.6-1.1.6-1.5.7-2.7-.1-3.5-1.4-1.4-5.2.1-8.5 2.5 0 0-1 .8-.8-.2.4-1.2.3-2.1-.4-2.5-1.6-.9-5.2 1.1-7.8 4.4-2.3 2.9-2.4 5.8-.9 7.4 2.8 2.9 10.1 2.3 15.1-.6 3.9-2.3 5.6-5.5 4-6.4Z"/><path fill="#fff" d="M12.2 13.1a4.5 4.5 0 1 0 0 7.2 4.5 4.5 0 0 0 0-7.2Zm-.5 5.7a2.2 2.2 0 1 1 0-4.4 2.2 2.2 0 0 1 0 4.4Z"/><circle cx="11.5" cy="16.6" r="1.1" fill="#fff"/><path fill="#E6162D" d="M15.5 2.5c2.8-.6 5.6 1.2 6.2 4 .2.8-.3 1.5-1.1 1.7-.8.2-1.5-.3-1.7-1.1-.3-1.2-1.5-2-2.7-1.7-.8.2-1.5-.3-1.7-1.1-.2-.8.3-1.6 1-1.8Z"/></svg>`
+};
+
+
+function getAppLogo(name) {
+  let src = "";
+
+  if (name.includes("Berriz")) {
+    src = "./images/logo-Berriz.png";
+  } else if (name.includes("YouTube")) {
+    src = "./images/logo-youtube.svg.webp";
+  } else if (name.includes("Instagram")) {
+    src = "./images/logo-Instagram.svg";
+  } else if (name.startsWith("X ") || name === "X") {
+    src = "./images/logo-X.jpg";
+  } else if (name.includes("TikTok")) {
+    src = "./images/logo-TikTok.png";
+  } else if (name.includes("Weibo")) {
+    src = "./images/logo-Weibo.png";
+  }
+
+  if (!src) return "";
+
+  return `<img class="app-logo" src="${src}" alt="" aria-hidden="true">`;
+}
+
+
+
+  const instagramLinks = {
+    "./images/muse1.jpg": {
+      title: "SERIM",
+      url: "https://www.instagram.com/sserimiress/"
+    },
+    "./images/muse2.jpg": {
+      title: "ALLEN",
+      url: "https://www.instagram.com/f.alleninlove/"
+    },
+    "./images/muse3.jpg": {
+      title: "JUNGMO",
+      url: "https://www.instagram.com/jun9mok00/"
+    },
+    "./images/muse4.jpg": {
+      title: "WOOBIN",
+      url: "https://www.instagram.com/woooob.in/"
+    },
+    "./images/muse5.jpg": {
+      title: "WONJIN",
+      url: "https://www.instagram.com/hamdust_/"
+    },
+    "./images/muse6.jpg": {
+      title: "MINHEE",
+      url: "https://www.instagram.com/min_h.ee/"
+    },
+    "./images/muse7.jpg": {
+  title: "HYEONGJUN",
+  links: [
+    {
+      name: "Instagram (Personal)",
+      url: "https://www.instagram.com/hy30ngjun/"
+    },
+    {
+      name: "Instagram (YouTube)",
+      url: "https://www.instagram.com/donggeul.shj/"
+    },
+    {
+      name: "YouTube",
+      url: "https://youtube.com/@donggeul_shj"
+    },
+  ]
+},
+    "./images/muse8.jpg": {
+      title: "TAEYOUNG",
+      url: "https://www.instagram.com/mygallery.o0ty/"
+    },
+    "./images/muse9.jpg": {
+  title: "SEONGMIN",
+  links: [
+    {
+      name: "Instagram",
+      url: "https://www.instagram.com/_minanism/"
+    },
+    {
+      name: "YouTube",
+      url: "https://www.youtube.com/@bishounensoft"
+    }
+  ]
+}
+  };
+
+  if (imageSrc === "./images/muse.jpg") {
+    title.textContent = "CRAVITY OFFICIAL";
+
+    links.innerHTML = [
+  ["Berriz", "https://berriz.in/cravity/"],
+  ["YouTube", "https://www.youtube.com/@CRAVITYofficial"],
+  ["Instagram (Official)", "https://www.instagram.com/cravity_official/"],
+  ["Instagram (Concept Photo)", "https://www.instagram.com/cravingmore_?cplk=MXI0ems2MmUzOG5kdQ=="],
+  ["X (Official)", "https://twitter.com/CRAVITYstarship"],
+  ["X (Members)", "https://twitter.com/CRAVITY_twt"],
+  ["TikTok", "https://www.tiktok.com/@cravityofficial"],
+  ["Weibo", "https://weibo.com/cravity"]
+].map(([name, url]) => `
+  <a href="${url}" target="_blank" rel="noopener noreferrer">
+    ${getAppLogo(name)}<span>${name}</span>
+  </a>
+`).join("");
+  } else if (instagramLinks[imageSrc]) {
+  const account = instagramLinks[imageSrc];
+
+  title.textContent = account.title;
+
+  const accountLinks = account.links || [
+    {
+      name: "Instagram",
+      url: account.url
+    }
+  ];
+
+    links.innerHTML = accountLinks.map(link => `
+  <a href="${link.url}" target="_blank" rel="noopener noreferrer">
+    ${getAppLogo(link.name)}<span>${link.name}</span>
+  </a>
+`).join("");
+}
+
+linkOverlay.classList.add("show");
+});
+
+  // 點擊半透明背景關閉
+  linkOverlay.addEventListener("click", (event) => {
+    if (event.target === linkOverlay) {
+      linkOverlay.classList.remove("show");
+    }
+  });
+
+  // 手機向下滑動關閉
+  let touchStartY = 0;
+
+  linkSheet.addEventListener("touchstart", (event) => {
+    touchStartY = event.touches[0].clientY;
+  }, { passive: true });
+
+  linkSheet.addEventListener("touchend", (event) => {
+    if (event.changedTouches[0].clientY - touchStartY > 80) {
+      linkOverlay.classList.remove("show");
+    }
+  }, { passive: true });
+
+  // 按 Esc 關閉
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      linkOverlay.classList.remove("show");
+    }
+  });
+}
+
+window.addEventListener("pageshow", () => {
+  const savedScrollY = sessionStorage.getItem("songListScrollY");
+
+  if (savedScrollY !== null) {
+    window.scrollTo(0, Number(savedScrollY));
+    sessionStorage.removeItem("songListScrollY");
+  }
+
+  document.documentElement.style.visibility = "visible";
+});
+
+  </script>
+  
+<!-- 背景音樂 -->
+<audio id="bgMusic" src="./music/background.mp3" loop preload="auto"></audio>
+
+<!-- 右上角音樂按鈕 -->
+<div id="musicWidget">
+  <button
+    id="musicToggle"
+    type="button"
+    aria-label="背景音樂設定"
+    aria-expanded="false"
+    title="背景音樂設定"
+  >
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M9 18V5l12-2v13" />
+      <circle cx="6" cy="18" r="3" />
+      <circle cx="18" cy="16" r="3" />
+    </svg>
+  </button>
+
+  <div id="musicPanel" hidden>
+    <div class="music-panel-title">Background Music</div>
+
+    <label for="musicVolume">音量</label>
+    <input
+      id="musicVolume"
+      type="range"
+      min="0"
+      max="100"
+      value="35"
+    >
+
+    <button id="musicMute" type="button">關閉音樂</button>
+    <p id="musicStatus" aria-live="polite">正在嘗試播放…</p>
+  </div>
+</div>
+
+
+<script>
+  const bgMusic = document.getElementById("bgMusic");
+  const musicToggle = document.getElementById("musicToggle");
+  const musicPanel = document.getElementById("musicPanel");
+  const musicVolume = document.getElementById("musicVolume");
+  const musicMute = document.getElementById("musicMute");
+  const musicStatus = document.getElementById("musicStatus");
+
+  // 初始音量 35%，嘗試進入首頁後自動播放
+  bgMusic.volume = 0.35;
+
+  function updateMusicStatus() {
+    if (bgMusic.paused) {
+      musicStatus.textContent = "音樂已暫停";
+    } else if (bgMusic.muted || bgMusic.volume === 0) {
+      musicStatus.textContent = "音樂已靜音";
+    } else {
+      musicStatus.textContent = "音樂播放中";
+    }
+
+    musicMute.textContent =
+      bgMusic.muted ? "開啟音樂" : "關閉音樂";
+  }
+
+  function startMusic() {
+    bgMusic.play()
+      .then(() => {
+        updateMusicStatus();
+      })
+      .catch(() => {
+        musicStatus.textContent = "請點擊音樂按鈕開始播放";
+      });
+  }
+
+  // 嘗試自動播放
+  startMusic();
+
+  // 點擊右上角音符：展開或收起控制面板
+  musicToggle.addEventListener("click", () => {
+    const isOpening = musicPanel.hidden;
+    musicPanel.hidden = !isOpening;
+    musicToggle.setAttribute("aria-expanded", String(isOpening));
+
+    // 如果自動播放被瀏覽器阻擋，點擊後再嘗試播放
+    if (bgMusic.paused) {
+      startMusic();
+    }
+  });
+
+  // 調整音量
+  musicVolume.addEventListener("input", () => {
+    bgMusic.volume = Number(musicVolume.value) / 100;
+
+    if (bgMusic.volume > 0 && bgMusic.muted) {
+      bgMusic.muted = false;
+    }
+
+    updateMusicStatus();
+  });
+
+  // 靜音／恢復音樂
+  musicMute.addEventListener("click", () => {
+    if (bgMusic.paused) {
+      bgMusic.muted = false;
+      startMusic();
+      return;
+    }
+
+    bgMusic.muted = !bgMusic.muted;
+    updateMusicStatus();
+  });
+
+  // 音樂檔案錯誤時顯示提示
+  bgMusic.addEventListener("error", () => {
+    musicStatus.textContent = "找不到音樂檔，請檢查檔案路徑";
+  });
+</script>
+
+
+
+</body>
+</html>
