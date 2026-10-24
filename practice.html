@@ -188,6 +188,18 @@
   font-weight: 900 !important;
 }
 
+/* 手機版：讓影片和歌詞框更靠近螢幕邊緣 */
+@media screen and (max-width: 600px) {
+  body {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .panel {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
   </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -5036,7 +5048,7 @@ const lyricsBySong = {
   ],
 
   "SWISH": [
-    { time: 2, text: "I'm so fresh", color: "#28243a" },
+    { time: 1.8, text: "I'm so fresh", color: "#28243a" },
     { time: 3, text: "좀 더 솔직해도 좋아", color: "#28243a" },
     { time: 5.5, 
       parts: [
@@ -5050,9 +5062,9 @@ const lyricsBySong = {
         { text: "말고(麥勾)", color: "#FF3366" }
       ]
     },
-    { time: 10.5, text: "이대로 난 멋대로 가", color: "#28243a" },
-    { time: 12, text: "끌리는 건 못 참아 난", color: "#28243a" },
-    { time: 13.5, text: "Listen up 이게 내 Style", color: "#28243a" },
+    { time: 10.3, text: "이대로 난 멋대로 가", color: "#28243a" },
+    { time: 11.8, text: "끌리는 건 못 참아 난", color: "#28243a" },
+    { time: 13, text: "Listen up 이게 내 Style", color: "#28243a" },
 
     { time: 16.5, 
       parts: [
@@ -5060,9 +5072,9 @@ const lyricsBySong = {
         { text: "미로(秘樓)", color: "#FF3366" }
       ]
     },
-    { time: 20, 
+    { time: 19.8, 
       parts: [
-        { text: "정답을 찾아내지 나의 방식", color: "#28243a" },
+        { text: "정답을 찾아내지 나의 방식\n", color: "#28243a" },
         { text: "대로(de樓)", color: "#FF3366" }
       ]
     },
@@ -5073,7 +5085,7 @@ const lyricsBySong = {
     { time: 29.3, text: "다른 건 Don't care", color: "#28243a" },
     { time: 31, text: "주저 없이 I gotta go", color: "#28243a" },
     { time: 33.5, text: "난 매번 택해", color: "#28243a" },
-    { time: 35, text: "가슴 뛰는 Way", color: "#28243a" },
+    { time: 34.8, text: "가슴 뛰는 Way", color: "#28243a" },
 
     { time: 37.5, 
       parts: [
@@ -5089,9 +5101,9 @@ const lyricsBySong = {
     },
     { time: 43.3, 
       parts: [
-        { text: "All you gotta do is \nr ", color: "#28243a" },
+        { text: "All you gotta do is \nr", color: "#28243a" },
         { text: "(啊!) ", color: "#FF3366" },
-        { text: "i ", color: "#28243a" },
+        { text: "i", color: "#28243a" },
         { text: "(啊!) ", color: "#FF3366" },
         { text: "de", color: "#28243a" },
       ]
@@ -5122,7 +5134,7 @@ const lyricsBySong = {
     { time: 58, text: "All the tricks", color: "#28243a" },
 
     { time: 59.8, text: "Ain't no reason \n don't you know", color: "#28243a" },
-    { time: 62.5, text: "원하니까 지금 내가 널 \n (窩哪你嘎 幾根 內嘎 No)", color: "#FF3366" },
+    { time: 62.3, text: "원하니까 지금 내가 널 \n (窩哪你嘎 幾根 內嘎 No)", color: "#FF3366" },
     { time: 65.5, text: "I keep doing it like", color: "#28243a" },
     { time: 67, 
       parts: [
@@ -5136,7 +5148,7 @@ const lyricsBySong = {
         { text: "c'mon", color: "#28243a" }
       ]
     },
-    { time: 70, text: "SWISH", color: "#FF3366" },
+    { time: 69.9, text: "SWISH", color: "#FF3366" },
     { time: 70.8, text: "원래 재는 법을 몰라", color: "#28243a" },
 
     { time: 73, 
@@ -5147,20 +5159,20 @@ const lyricsBySong = {
     },
     { time: 75.8, text: "괜히 시간 끄는 말은 넘어가고", color: "#28243a" },
     { time: 79.8, text: "표현해 줘 있는 그대로", color: "#28243a" },
-    { time: 82.5, 
+    { time: 82.3, 
       parts: [
         { text: "서투르면 어때 ", color: "#28243a" },
         { text: "(좋아!)(揪啊!)", color: "#FF3366" }
       ]
     },
     { time: 84.8, text: "굳이 뭘 애쓰지 않아도", color: "#28243a" },
-    { time: 87, text: "You're gonna \n make me high", color: "#28243a" },
+    { time: 86.8, text: "You're gonna \n make me high", color: "#28243a" },
 
     { time: 90, text: "I'm holding my breath", color: "#28243a" },
     { time: 91.3, text: "너 말곤 Don't care", color: "#28243a" },
-    { time: 93.3, text: "주저 없이 Want it more", color: "#28243a" },
+    { time: 93.2, text: "주저 없이 Want it more", color: "#28243a" },
     { time: 95.8, text: "난 오직 택해", color: "#28243a" },
-    { time: 97, text: "내가 믿는 Way", color: "#28243a" },
+    { time: 96.8, text: "내가 믿는 Way", color: "#28243a" },
     { time: 99.8, 
       parts: [
         { text: "즐기고 싶은 이 Moment \n", color: "#28243a" },
@@ -5175,9 +5187,9 @@ const lyricsBySong = {
     },
     { time: 105.3, 
       parts: [
-        { text: "All you gotta do is \nr ", color: "#28243a" },
+        { text: "All you gotta do is \nr", color: "#28243a" },
         { text: "(啊!) ", color: "#FF3366" },
-        { text: "i ", color: "#28243a" },
+        { text: "i", color: "#28243a" },
         { text: "(啊!) ", color: "#FF3366" },
         { text: "de", color: "#28243a" },
       ]
@@ -5197,7 +5209,7 @@ const lyricsBySong = {
         { text: "spot on", color: "#28243a" }
       ]
     },
-    { time: 115.3, text: "Bliss", color: "#28243a" },
+    { time: 115.2, text: "Bliss", color: "#28243a" },
     { time: 116, text: "그냥 직감대로 골라", color: "#28243a" },
     { time: 118, 
       parts: [
@@ -5211,19 +5223,19 @@ const lyricsBySong = {
 
     { time: 124.5, text: "맘이 가는 대로", color: "#28243a" },
     { time: 127.5, text: "내버려둔 채로", color: "#28243a" },
-    { time: 130, text: "깊은 감정을 나눠", color: "#28243a" },
+    { time: 129.8, text: "깊은 감정을 나눠", color: "#28243a" },
     { time: 132.5, text: "너란 세상을 느껴", color: "#28243a" },
 
     { time: 135, text: "여기 너와 나", color: "#28243a" },
-    { time: 136.5, text: "Like the way \n I'm feeling now", color: "#28243a" },
+    { time: 136.3, text: "Like the way \n I'm feeling now", color: "#28243a" },
     { time: 138, text: "모든 것이 Right", color: "#28243a" },
-    { time: 139.3, text: "가까워진 그 순간", color: "#28243a" },
-    { time: 141.5, text: "심장은 Sky high", color: "#28243a" },
+    { time: 139, text: "가까워진 그 순간", color: "#28243a" },
+    { time: 141.3, text: "심장은 Sky high", color: "#28243a" },
 
     { time: 143, text: "I'm so fresh", color: "#28243a" },
     { time: 144.3, text: "우린 느낌이 좀 달라", color: "#28243a" },
 
-    { time: 146.5, text: "Swish c'mon", color: "#28243a" },
+    { time: 146.3, text: "Swish c'mon", color: "#28243a" },
     { time: 147.8, text: "Swish swish spot on", color: "#28243a" },
     { time: 149.3, text: "Bliss", color: "#28243a" },
     { time: 149.8, text: "그냥 직감대로 골라", color: "#28243a" },
@@ -5247,12 +5259,12 @@ const lyricsBySong = {
     { time: 164.5, 
       parts: [
         { text: "Miss, miss ", color: "#FF3366" },
-        { text: "c’mon", color: "#28243a" }
+        { text: "c'mon", color: "#28243a" }
       ]
     },
     { time: 166, text: "SWISH", color: "#FF3366" },
     { time: 166.8, text: "원래 재는 법을 몰라", color: "#28243a" },
-    { time: 169, text: "(歡呼)", color: "#FF3366" },
+    { time: 168.8, text: "(歡呼)", color: "#FF3366" },
 
   ],
 
@@ -5442,7 +5454,7 @@ const lyricsBySong = {
     { time: 148.8, 
       parts: [
         { text: "널 ", color: "#28243a" },
-        { text: "가득 들이켜(卡特 得理kyo)", color: "#E0B83F" }
+        { text: "가득 들이켜\n(卡特 得理kyo)", color: "#E0B83F" }
       ]
     },
     { time: 150.5, text: "I'm lovin' it ", color: "#28243a" },
@@ -5492,7 +5504,7 @@ const lyricsBySong = {
     { time: 22.8, text: "Awake alone", color: "#28243a" },
     { time: 26.8, text: "내 시선이 멈춰 선 곳", color: "#28243a" },
     { time: 30.5, text: "Your eyes were closed", color: "#28243a" },
-    { time: 34.5, text: "위태롭게 또 걷고 있어", color: "#28243a" },
+    { time: 34.4, text: "위태롭게 또 걷고 있어", color: "#28243a" },
 
     { time: 39, text: "No matter where we are", color: "#28243a" },
     { time: 41, text: "No matter what it takes", color: "#28243a" },
@@ -5501,62 +5513,62 @@ const lyricsBySong = {
     { time: 49, text: "떠오른 태양이", color: "#28243a" },
     { time: 51, text: "Breathing into the light", color: "#28243a" },
 
-    { time: 54.5, 
+    { time: 54.3, 
       parts: [
         { text: "Now I'm reaching \n for the ", color: "#28243a" },
         { text: "fire", color: "#a66bdf" }
       ]
     },
-    { time: 57, 
+    { time: 56.8, 
       parts: [
         { text: "이 열기는 ", color: "#28243a" },
         { text: "higher", color: "#a66bdf" }
       ]
     },
     { time: 58.8, text: "이제는 pick up my pieces", color: "#28243a" },
-    { time: 61, text: "눈이 먼다 해도 all in", color: "#28243a" },
-    { time: 62.5, 
+    { time: 60.8, text: "눈이 먼다 해도 all in", color: "#28243a" },
+    { time: 62.4, 
       parts: [
         { text: "뜨겁게 번진 wild ", color: "#28243a" },
         { text: "lightning", color: "#a66bdf" }
       ]
     },
-    { time: 65, 
+    { time: 64.8, 
       parts: [
         { text: "끊임없는 ", color: "#28243a" },
         { text: "rising", color: "#a66bdf" }
       ]
     },
-    { time: 67, text: "이젠 날 멈추지 못해, ayy", color: "#28243a" },
+    { time: 66.8, text: "이젠 날 멈추지 못해, ayy", color: "#28243a" },
     { time: 69, text: "Burn it up, burn it up, \n burn it up", color: "#a66bdf" },
 
-    { time: 71, text: "Eyes on it, I want it", color: "#28243a" },
-    { time: 73, 
+    { time: 70.8, text: "Eyes on it, I want it", color: "#28243a" },
+    { time: 72.8, 
       parts: [
         { text: "I'm wide awake ", color: "#28243a" },
         { text: "(wake)", color: "#a66bdf" }
       ]
     },
-    { time: 75, text: "Eyes on it, I want it", color: "#28243a" },
+    { time: 74.8, text: "Eyes on it, I want it", color: "#28243a" },
     { time: 77, text: "Burn it up, burn it up, \n burn it up", color: "#a66bdf" },
 
-    { time: 79, text: "Yeah, uh, 조용히 움직여", color: "#28243a" },
-    { time: 81, text: "Swallow the end then I \n (Low hiss)", color: "#28243a" },
+    { time: 78.8, text: "Yeah, uh, 조용히 움직여", color: "#28243a" },
+    { time: 81.8, text: "Swallow the end then I \n (Low hiss)", color: "#28243a" },
     { time: 84.5, text: "되감아 can't see no finish \n line in my design", color: "#28243a" },
 
-    { time: 87, 
+    { time: 86.8, 
       parts: [
         { text: "Bite me, \n", color: "#a66bdf" },
         { text: "송곳니로 깊숙이 날 물어", color: "#28243a" }
       ]
     },
-    { time: 89, 
+    { time: 88.8, 
       parts: [
         { text: "Fight me, \n", color: "#a66bdf" },
         { text: "매일 나를 새롭게 만들어", color: "#28243a" }
       ]
     },
-    { time: 91, text: "Keep the blood, \n drippin' ever slightly", color: "#28243a" },
+    { time: 90.8, text: "Keep the blood, \n drippin' ever slightly", color: "#28243a" },
     { time: 92, text: "Cold blooded, \n we be looking quite enticing, ayy", color: "#28243a" },
 
     { time: 95, text: "No matter where we are", color: "#28243a" },
@@ -5565,7 +5577,7 @@ const lyricsBySong = {
     { time: 103, text: "견뎌낸 심장이 다시 또 깨어나", color: "#28243a" },
     { time: 107, text: "Nothing can stop us now", color: "#28243a" },
 
-    { time: 110.5, 
+    { time: 110.3, 
       parts: [
         { text: "Now Im reaching \n for the ", color: "#28243a" },
         { text: "fire", color: "#a66bdf" }
@@ -5578,14 +5590,14 @@ const lyricsBySong = {
       ]
     },
     { time: 114.8, text: "이제는 pick up my pieces", color: "#28243a" },
-    { time: 117, text: "눈이 먼다 해도 all in", color: "#28243a" },
-    { time: 118.5, 
+    { time: 116.8, text: "눈이 먼다 해도 all in", color: "#28243a" },
+    { time: 118.3, 
       parts: [
         { text: "뜨겁게 번진 wild ", color: "#28243a" },
         { text: "lightning", color: "#a66bdf" }
       ]
     },
-    { time: 121, 
+    { time: 120.8, 
       parts: [
         { text: "끊임없는 ", color: "#28243a" },
         { text: "rising", color: "#a66bdf" }
@@ -5602,7 +5614,7 @@ const lyricsBySong = {
     { time: 135, text: "This is the greatest awakening", color: "#28243a" },
     { time: 137, text: "Eyes on it, I want it, everything", color: "#28243a" },
     { time: 139, text: "I get what I want, \n it's in front of me", color: "#28243a" },
-    { time: 141, text: "Round and around, \n I can go for eternity", color: "#28243a" },
+    { time: 140.9, text: "Round and around, \n I can go for eternity", color: "#28243a" },
 
     { time: 142.5, 
       parts: [
@@ -5617,32 +5629,32 @@ const lyricsBySong = {
       ]
     },
     { time: 146.8, text: "Look at me \n I'm going crazy", color: "#28243a" },
-    { time: 149, text: "새로 태어난 Emotion", color: "#28243a" },
-    { time: 150.5, 
+    { time: 148.8, text: "새로 태어난 Emotion", color: "#28243a" },
+    { time: 150.3, 
       parts: [
         { text: "뜨겁게 번진 wild ", color: "#28243a" },
         { text: "lightning", color: "#a66bdf" }
       ]
     },
-    { time: 153, 
+    { time: 152.8, 
       parts: [
         { text: "끊임없는 ", color: "#28243a" },
         { text: "rising", color: "#a66bdf" }
       ]
     },
-    { time: 155, text: "이젠 날 멈추지 못해, ayy", color: "#28243a" },
+    { time: 154.9, text: "이젠 날 멈추지 못해, ayy", color: "#28243a" },
     { time: 157, text: "Burn it up, burn it up, \n burn it up", color: "#a66bdf" },
 
     { time: 159, text: "Eyes on it, I want it", color: "#28243a" },
-    { time: 161, 
+    { time: 160.8, 
       parts: [
-        { text: "I’m wide awake ", color: "#28243a" },
+        { text: "I'm wide awake ", color: "#28243a" },
         { text: "(wake)", color: "#a66bdf" }
       ]
     },
     { time: 163, text: "Eyes on it, I want it", color: "#28243a" },
     { time: 165, text: "Burn it up, burn it up, \n burn it up ", color: "#28243a" },
-    { time: 167.5, text: "(歡呼)", color: "#a66bdf" },
+    { time: 167.3, text: "(歡呼)", color: "#a66bdf" },
   ],
 
   "LOUDER": [
@@ -5657,12 +5669,12 @@ const lyricsBySong = {
     { time: 27, text: "Get loud", color: "#28243a" },
     { time: 29, text: "고요를 흔드는 Flow", color: "#28243a" },
     { time: 31, text: "Realize", color: "#28243a" },
-    { time: 32.8, text: "찬란한 수면 위로", color: "#28243a" },
-    { time: 35, text: "커져가는 떨림 \n Nobody knows", color: "#28243a" },
+    { time: 32.7, text: "찬란한 수면 위로", color: "#28243a" },
+    { time: 35.2, text: "커져가는 떨림 \n Nobody knows", color: "#28243a" },
     { time: 38, text: "크.래.비.티 \n Lo.u.der", color: "#7CB342" },
 
-    { time: 42, text: "Voices in my mind", color: "#28243a" },
-    { time: 45, text: "거듭된 숨결 따라", color: "#28243a" },
+    { time: 41.8, text: "Voices in my mind", color: "#28243a" },
+    { time: 44.8, text: "거듭된 숨결 따라", color: "#28243a" },
     { time: 49, text: "Got me something \n so mythical", color: "#28243a" },
     { time: 52, text: "심장을 박찬 이 순간", color: "#28243a" },
 
@@ -5672,7 +5684,7 @@ const lyricsBySong = {
         { text: "louder", color: "#7CB342" },
       ]
     },
-    { time: 58.5, 
+    { time: 58.3, 
       parts: [
         { text: "올려 더 ", color: "#28243a" },
         { text: "Temperature", color: "#7CB342" }
@@ -5681,29 +5693,29 @@ const lyricsBySong = {
     { time: 60, text: "낯선 떨림은", color: "#28243a" },
     { time: 61.5, text: "더 새롭게 Burn me alive", color: "#28243a" },
 
-    { time: 64, 
+    { time: 63.8, 
       parts: [
         { text: "Ain't no use to ", color: "#28243a" },
         { text: "fight it", color: "#7CB342" }
       ]
     },
-    { time: 66, 
+    { time: 65.8, 
       parts: [
         { text: "끝없이 휘", color: "#28243a" },
         { text: "몰아쳐(莫拉球)", color: "#7CB342" }
       ]
     },
     { time: 67.5, text: "온몸을 던져", color: "#28243a" },
-    { time: 69, text: "Shed it off and \n bring me alive", color: "#28243a" },
+    { time: 68.8, text: "Shed it off and \n bring me alive", color: "#28243a" },
 
-    { time: 71.5, text: "All my heart gets louder", color: "#28243a" },
-    { time: 76.5, 
+    { time: 71.4, text: "All my heart gets louder", color: "#28243a" },
+    { time: 76.3, 
       parts: [
         { text: "떨림 속에 ", color: "#28243a" },
         { text: "Feelin' so loud", color: "#8B5E3C" }
       ]
     },
-    { time: 79, text: "You & I get higher", color: "#28243a" },
+    { time: 78.8, text: "You & I get higher", color: "#28243a" },
     { time: 83.8, 
       parts: [
         { text: "거침없이 ", color: "#28243a" },
@@ -5712,13 +5724,13 @@ const lyricsBySong = {
     },
 
     { time: 86, text: "Splash in the pocket, \n clap in the cavity", color: "#28243a" },
-    { time: 88, text: "Every little bounce \n comes back at me", color: "#28243a" },
-    { time: 89.8, text: "파고든 리듬 \n Make the room lean", color: "#28243a" },
-    { time: 91.5, text: "날을 세운 소리 베어버려 \n The sheen", color: "#28243a" },
-    { time: 93.8, text: "I think you know \n what I mean", color: "#28243a" },
-    { time: 95.5, text: "I don't fade, I inflate", color: "#28243a" },
-    { time: 97, text: "I don't wait, I resonate", color: "#28243a" },
-    { time: 99, 
+    { time: 87.8, text: "Every little bounce \n comes back at me", color: "#28243a" },
+    { time: 89.7, text: "파고든 리듬 \n Make the room lean", color: "#28243a" },
+    { time: 91.3, text: "날을 세운 소리 베어버려 \n The sheen", color: "#28243a" },
+    { time: 93.5, text: "I think you know \n what I mean", color: "#28243a" },
+    { time: 95.3, text: "I don't fade, I inflate", color: "#28243a" },
+    { time: 96.8, text: "I don't wait, I resonate", color: "#28243a" },
+    { time: 98.8, 
       parts: [
         { text: "From a hush to a roar \n to a rush to a ", color: "#28243a" },
         { text: "blur", color: "#7CB342" }
@@ -5727,9 +5739,9 @@ const lyricsBySong = {
 
     { time: 101, text: "Gazing at the sky", color: "#28243a" },
     { time: 104, text: "숨결 따라 흘러가 ", color: "#28243a" },
-    { time: 108, text: "(Hey!)", color: "#7CB342" },
-    { time: 108.5, text: "파도 끝 편에 널 찾아", color: "#28243a" },
-    { time: 111.5, text: "계속 번져가 Take me far", color: "#28243a" },
+    { time: 107.9, text: "(Hey!)", color: "#7CB342" },
+    { time: 108.3, text: "파도 끝 편에 널 찾아", color: "#28243a" },
+    { time: 111.3, text: "계속 번져가 Take me far", color: "#28243a" },
 
     { time: 115.5, 
       parts: [
@@ -5737,14 +5749,14 @@ const lyricsBySong = {
         { text: "louder", color: "#7CB342" },
       ]
     },
-    { time: 117.5, 
+    { time: 117.3, 
       parts: [
         { text: "올려 더 ", color: "#28243a" },
         { text: "Temperature", color: "#7CB342" }
       ]
     },
-    { time: 119.5, text: "낯선 떨림은", color: "#28243a" },
-    { time: 121, text: "더 새롭게 Burn me alive", color: "#28243a" },
+    { time: 119.3, text: "낯선 떨림은", color: "#28243a" },
+    { time: 120.8, text: "더 새롭게 Burn me alive", color: "#28243a" },
 
     { time: 123, 
       parts: [
@@ -5752,7 +5764,7 @@ const lyricsBySong = {
         { text: "fight it", color: "#7CB342" }
       ]
     },
-    { time: 125, 
+    { time: 124.8, 
       parts: [
         { text: "끝없이 휘", color: "#28243a" },
         { text: "몰아쳐(莫拉球)", color: "#7CB342" }
@@ -5762,13 +5774,13 @@ const lyricsBySong = {
     { time: 128, text: "Shed it off and \n bring me alive", color: "#28243a" },
 
     { time: 130.5, text: "All my heart gets louder", color: "#28243a" },
-    { time: 135.5, 
+    { time: 135.4, 
       parts: [
         { text: "떨림 속에 ", color: "#28243a" },
         { text: "Feelin' so loud", color: "#8B5E3C" }
       ]
     },
-    { time: 138, text: "You & I get higher", color: "#28243a" },
+    { time: 137.8, text: "You & I get higher", color: "#28243a" },
     { time: 142.8, 
       parts: [
         { text: "거침없이 ", color: "#28243a" },
@@ -5777,34 +5789,34 @@ const lyricsBySong = {
     },
 
     { time: 145, text: "나를 뒤바꿔 \n From the inside", color: "#28243a" },
-    { time: 147, text: "Not of this world \n 그게 My type", color: "#28243a" },
+    { time: 147.2, text: "Not of this world \n 그게 My type", color: "#28243a" },
     { time: 149, text: "Catch another wave take a deep dive", color: "#28243a" },
     { time: 151, text: "더 Penetrate, \n 더 Penetrate", color: "#28243a" },
     { time: 153, text: "올라가는 Tempo no rewind", color: "#28243a" },
-    { time: 155, text: "마주하는 My inner divine", color: "#28243a" },
-    { time: 156.8, text: "Look me in the face", color: "#28243a" },
+    { time: 154.8, text: "마주하는 My inner divine", color: "#28243a" },
+    { time: 156.5, text: "Look me in the face", color: "#28243a" },
     { time: 157.5, text: "Put me in a daze", color: "#28243a" },
     { time: 158.5, text: "Take me to that place", color: "#28243a" },
 
     { time: 160.8, 
       parts: [
-        { text: "Makin’ so loud ", color: "#28243a" },
+        { text: "Makin' so loud ", color: "#28243a" },
         { text: "(歡呼)", color: "#7CB342" }
       ]
     },
 
     { time: 162, text: "All my heart gets louder", color: "#28243a" },
-    { time: 167, 
+    { time: 166.8, 
       parts: [
         { text: "떨림 속에 ", color: "#28243a" },
-        { text: "Feelin’ so loud", color: "#8B5E3C" }
+        { text: "Feelin' so loud", color: "#8B5E3C" }
       ]
     },
-    { time: 169.5, text: "You & I get higher", color: "#28243a" },
-    { time: 174.5, 
+    { time: 169.3, text: "You & I get higher", color: "#28243a" },
+    { time: 174.3, 
       parts: [
         { text: "거침없이 ", color: "#28243a" },
-        { text: "Makin’ so loud", color: "#8B5E3C" }
+        { text: "Makin' so loud", color: "#8B5E3C" }
       ]
     },
 
@@ -5814,18 +5826,18 @@ const lyricsBySong = {
         { text: "louder", color: "#7CB342" },
       ]
     },
-    { time: 178.5, 
+    { time: 178.3, 
       parts: [
         { text: "올려 더 ", color: "#28243a" },
         { text: "Temperature", color: "#7CB342" }
       ]
     },
-    { time: 180.5, text: "낯선 떨림은", color: "#28243a" },
-    { time: 181.8, text: "더 새롭게 Burn me alive", color: "#28243a" },
+    { time: 180.3, text: "낯선 떨림은", color: "#28243a" },
+    { time: 181.7, text: "더 새롭게 Burn me alive", color: "#28243a" },
 
     { time: 184, 
       parts: [
-        { text: "Ain’t no use to ", color: "#28243a" },
+        { text: "Ain't no use to ", color: "#28243a" },
         { text: "fight it", color: "#7CB342" }
       ]
     },
