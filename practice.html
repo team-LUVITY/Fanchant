@@ -5956,6 +5956,9 @@ line.addEventListener("click", () => {
   }
 
   player.seekTo(lyric.time, true);
+
+  // 同步更新歌詞顏色與位置，即使影片暫停也有效
+  showLyric(index);
 });
 
     // 新格式：同一句有多種顏色
