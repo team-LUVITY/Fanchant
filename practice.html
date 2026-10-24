@@ -5943,10 +5943,11 @@ const startTimes = {
 
 const startTime = startTimes[songName] || 0;
 
-  const titleElement = document.getElementById("songTitle");
+const titleElement = document.getElementById("songTitle");
 
-if (songName === "Maybe Baby (좋아하나봐)") {
-  titleElement.innerHTML = 'Maybe Baby<span class="mobile-title-break"><br></span> (좋아하나봐)';
+if (songName.includes("Maybe Baby")) {
+  titleElement.innerHTML =
+    'Maybe Baby<span class="mobile-title-break"><br></span> (좋아하나봐)';
 } else {
   titleElement.textContent = songName;
 }
