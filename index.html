@@ -247,25 +247,19 @@
   background: #fff5dc;
 }
 
+/* 手機版：避免點擊星星後灰色背景一直保留 */
+@media (hover: none) and (pointer: coarse) {
+  .song .favorite-star:hover {
+    background: transparent;
+  }
 
-/* 手機星星點擊時短暫顯示圓圈，點完不保留 */
-.song .favorite-star {
-  -webkit-tap-highlight-color: transparent;
-}
+  .song .favorite-star.is-favorite:hover {
+    background: transparent;
+  }
 
-.song .favorite-star:active {
-  background: #D9D9DC;
-}
-
-.song .favorite-star:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-/* 保留鍵盤操作時的焦點提示 */
-.song .favorite-star:focus-visible {
-  outline: 2px solid #3A3A3C;
-  outline-offset: 2px;
+  .song .favorite-star:active {
+    background: #D9D9DC;
+  }
 }
 
 
