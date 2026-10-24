@@ -5946,6 +5946,17 @@ function renderLyrics() {
     line.className = "lyric-line";
     line.dataset.index = index;
 
+    // 點擊歌詞，讓影片跳到對應時間
+    line.style.cursor = "pointer";
+
+line.addEventListener("click", () => {
+  if (!player || typeof player.seekTo !== "function") {
+    return;
+  }
+
+  player.seekTo(lyric.time, true);
+  showLyric(index);
+});
 
     // 新格式：同一句有多種顏色
     if (lyric.parts) {
