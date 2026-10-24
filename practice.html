@@ -6,6 +6,7 @@
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="icon" type="image/png" href="./images/luvity.jpg?v=2">
 <link rel="apple-touch-icon" href="./images/luvity.jpg?v=2">
+  <title>CRAVITY FANCHANT</title>
   <style>
     * { box-sizing: border-box; }
 
@@ -5942,7 +5943,9 @@ const startTimes = {
 
 const startTime = startTimes[songName] || 0;
 
-  if (songName === "Maybe Baby (좋아하나봐)") {
+  const titleElement = document.getElementById("songTitle");
+
+if (songName === "Maybe Baby (좋아하나봐)") {
   titleElement.innerHTML = 'Maybe Baby<span class="mobile-title-break"><br></span> (좋아하나봐)';
 } else {
   titleElement.textContent = songName;
