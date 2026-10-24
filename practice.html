@@ -182,10 +182,6 @@
   transform: scale(1.04);
 }
 
-/* 無法播放影片時，靜態歌詞不透明 */
-#lyricsList.static-lyrics .lyric-line {
-  opacity: 1;
-}
 
 /* 只有中文字使用粗體中文字型 */
 .lyric-line span.chinese {
@@ -235,19 +231,19 @@ const lyricsBySong = {
   { time: 13.8, 
     parts:[
       { text: "우린 어느새 눈동자 속에서 \n 빛을 잃은 줄도 모르고 \n", color: "#28243a" },
-      { text: "(哦哦哦哦哦)", color: "#D4AF37" },
+      { text: "(Oh Oh Oh Oh Oh)", color: "#D4AF37" },
     ]
   },
   { time: 19.8, 
     parts:[
       { text: "절망 앞에 익숙해진 행성 \n 어둠 속에 핀 dystopia \n", color: "#28243a" },
-      { text: "(哦哦哦哦哦)", color: "#D4AF37" },
+      { text: "(Oh Oh Oh Oh Oh)", color: "#D4AF37" },
     ]
   },
 
   { time: 26.8, text: "This is not a dream, \n this is not a game", color: "#28243a" },
   { time: 29, text: "Burn it, burn it", color: "#D4AF37" },  
-  { time: 29.8, text: "This is super real 깨어나야 돼 \n", color: "#28243a" },
+  { time: 29.8, text: "This is super real \n깨어나야 돼", color: "#28243a" },
   { time: 32, text: "Burn it, burn it", color: "#D4AF37" },  
   { time: 32.8, text: "Turn it up, turn it up, \n turn it up 눈을 뜨고 봐", color: "#28243a" },
   { time: 35.8, 
@@ -260,7 +256,7 @@ const lyricsBySong = {
   { time: 39.5, text: "이렇게 흘러가겠지 \n 이토록 아무 의미 없게", color: "#28243a" },
   { time: 45.5, 
     parts:[
-      { text: "희망이 사라져버린 ", color: "#28243a" },
+      { text: "희망이 사라져버린 \n", color: "#28243a" },
       { text: "속삭임(搜撒gim)", color: "#D4AF37" },
     ]
   },  
@@ -285,7 +281,7 @@ const lyricsBySong = {
   { time: 70.5, text: "무기력한 목소리도 criminal", color: "#28243a" },
   { time: 72.8, 
     parts:[
-      { text: "Criminal, criminal ", color: "#D4AF37" },
+      { text: "Criminal, criminal \n", color: "#D4AF37" },
       { text: "너를 깨워", color: "#28243a" },
     ]
   },  
@@ -311,7 +307,7 @@ const lyricsBySong = {
   }, 
 
   { time: 83.5, text: "지금이 그 때야 \n breaking the rules", color: "#28243a" },
-  { time: 85.8, text: "It's cool, breaking the rules", color: "#28243a" },
+  { time: 85.8, text: "It's cool, \nbreaking the rules", color: "#28243a" },
 
   { time: 88.3, 
     parts:[
@@ -346,7 +342,7 @@ const lyricsBySong = {
   { time: 100.8, text: "어떻게 바꿔야 할지 \n 그냥 난 이대로가 편해", color: "#28243a" },
   { time: 107, 
     parts:[
-      { text: "진심이 아닌 걸 알아 ", color: "#28243a" },
+      { text: "진심이 아닌 걸 알아 \n", color: "#28243a" },
       { text: "솔직히(搜基ki)", color: "#D4AF37" },
     ]
   },  
@@ -371,7 +367,7 @@ const lyricsBySong = {
   { time: 132.3, text: "무기력한 목소리도 criminal", color: "#28243a" },
   { time: 134.5, 
     parts:[
-      { text: "Criminal, criminal ", color: "#D4AF37" },
+      { text: "Criminal, criminal \n", color: "#D4AF37" },
       { text: "너를 깨워", color: "#28243a" },
     ]
   },  
@@ -396,7 +392,7 @@ const lyricsBySong = {
     ]
   }, 
   { time: 145, text: "지금이 그 때야 \n breaking the rules", color: "#28243a" },
-  { time: 147, text: "It's cool, breaking the rules", color: "#28243a" },
+  { time: 147, text: "It's cool, \nbreaking the rules", color: "#28243a" },
 
   { time: 151.3, text: "저 위태롭고 아름다운 경계", color: "#28243a" },
   { time: 154, text: "길었던 터널 속", color: "#28243a" },
@@ -419,7 +415,7 @@ const lyricsBySong = {
   { time: 184.5, text: "무기력한 목소리도 criminal", color: "#28243a" },
   { time: 186.8, 
     parts:[
-      { text: "Criminal, criminal ", color: "#D4AF37" },
+      { text: "Criminal, criminal \n", color: "#D4AF37" },
       { text: "너를 깨워", color: "#28243a" },
     ]
   },  
@@ -444,7 +440,7 @@ const lyricsBySong = {
     ]
   }, 
   { time: 197.5, text: "지금이 그 때야 \n breaking the rules", color: "#28243a" },
-  { time: 199.5, text: "It's cool, breaking the rules", color: "#28243a" },
+  { time: 199.5, text: "It's cool, \nbreaking the rules", color: "#28243a" },
 
   { time: 202.8, text: "(歡呼)", color: "#D4AF37" },
 ],
@@ -483,14 +479,14 @@ const lyricsBySong = {
   },
   { time: 42, 
     parts: [
-      {text: "널 혼자 내버려두기엔 시간 ", color: "#28243a" },
+      {text: "널 혼자 내버려두기엔 시간 \n", color: "#28243a" },
       {text: "아까워(啊嘎窩)", color: "#0047AB" }
     ]
   },
   { time: 46.8, 
     parts: [
       {text: "Ballin, ballin, \n", color: "#0047AB" },
-      {text: "we're gonna rock with you", color: "#28243a" },
+      {text: "we're gonna rock \nwith you", color: "#28243a" },
     ]
   },
 
@@ -504,7 +500,7 @@ const lyricsBySong = {
 
   { time: 55.8, text: "어디든 데려다 줄게", color: "#28243a" },
   { time: 58.5, text: "My Baby hold me tight", color: "#28243a" },
-  { time: 60.8, text: "And we got something \n right there", color: "#28243a" },
+  { time: 60.8, text: "And we got \n something right there", color: "#28243a" },
   { time: 63.5, text: "(Right there)", color: "#0047AB" },
 
   { time: 65, text: "내 손을 잡아", color: "#28243a" },
@@ -564,7 +560,7 @@ const lyricsBySong = {
 
   { time: 111.5, text: "어디든 데려다 줄게", color: "#28243a" },
   { time: 113.8, text: "My Baby hold me tight", color: "#28243a" },
-  { time: 116.5, text: "And we got something \n right there", color: "#28243a" },
+  { time: 116.5, text: "And we got \nsomething right there", color: "#28243a" },
   { time: 119, text: "(Right there)", color: "#0047AB" },
 
   { time: 120.5, text: "내 손을 잡아", color: "#28243a" },
@@ -668,14 +664,14 @@ const lyricsBySong = {
     },
     { time: 31.5, 
       parts: [
-        {text: "이제 우리라 기뻐 ", color: "#28243a" },
+        {text: "이제 우리라 기뻐 \n", color: "#28243a" },
         {text: "(yeah yeah)", color: "#87CEEB" }
       ]
     },
     { time: 33.5, text: "서로 모두를 비춰줄테니", color: "#28243a" },
 
-    { time: 37, text: "혼자는 Never, Better Together", color: "#28243a" },
-    { time: 40.8, text: "고민 섞인 표정을 펴줄 내가 있어줄게", color: "#28243a" },
+    { time: 37, text: "혼자는 Never, \nBetter Together", color: "#28243a" },
+    { time: 40.8, text: "고민 섞인 표정을 펴줄 \n내가 있어줄게", color: "#28243a" },
     { time: 43.3, text: "Take your blues away", color: "#28243a" },
 
     { time: 44.3, 
@@ -704,14 +700,14 @@ const lyricsBySong = {
 
     { time: 60.5, 
       parts: [
-        {text: "We singing like ", color: "#28243a" },
+        {text: "We singing like \n", color: "#28243a" },
         {text: "(Oh- Oh- Oh-)", color: "#87CEEB" }
       ]
     },
     { time: 67.5, text: "Cloud 9, Cloud 9", color: "#28243a" },
     { time: 68.9, 
       parts: [
-        {text: "We singing like ", color: "#28243a" },
+        {text: "We singing like \n", color: "#28243a" },
         {text: "(Oh- Oh-)", color: "#87CEEB" }
       ]
     },
@@ -719,13 +715,13 @@ const lyricsBySong = {
   
     { time: 78.3, 
       parts: [
-        {text: "가방 챙기지 마, 짐 놔 ", color: "#28243a" },
+        {text: "가방 챙기지 마, 짐 놔 \n", color: "#28243a" },
         {text: "버려(波流)", color: "#87CEEB" }
       ]
     },
     { time: 80.3, 
       parts: [
-        {text: "그냥 넌 내 손만 꼭 ", color: "#28243a" },
+        {text: "그냥 넌 내 손만 꼭 \n", color: "#28243a" },
         {text: "붙잡어(不炸波)", color: "#87CEEB" }
       ]
     },
@@ -741,8 +737,8 @@ const lyricsBySong = {
       ]
     },
 
-    { time: 95.8, text: "혼자는 Never, Better Together", color: "#28243a" },
-    { time: 99.5, text: "짜증 섞인 표정을 펴줄 내가 있어줄게", color: "#28243a" },
+    { time: 95.8, text: "혼자는 Never, \nBetter Together", color: "#28243a" },
+    { time: 99.5, text: "짜증 섞인 표정을 펴줄 \n내가 있어줄게", color: "#28243a" },
     { time: 101.8, text: "Take you everywhere", color: "#28243a" },
 
     { time: 102.8, 
@@ -771,21 +767,21 @@ const lyricsBySong = {
 
     { time: 119, 
       parts: [
-        {text: "We singing like ", color: "#28243a" },
+        {text: "We singing like \n", color: "#28243a" },
         {text: "(Oh- Oh- Oh-)", color: "#87CEEB" }
       ]
     },
     { time: 126, text: "Cloud 9, Cloud 9", color: "#28243a" },
     { time: 127.5, 
       parts: [
-        {text: "We singing like ", color: "#28243a" },
+        {text: "We singing like \n", color: "#28243a" },
         {text: "(Oh- Oh-)", color: "#87CEEB" }
       ]
     },
     { time: 132, text: "꽉 잡아 더, 우린 하늘 위로 \n Cloud 9, Cloud 9", color: "#28243a" },
   
     { time: 136.5, text: "Flow away, 더 멀리 멀리", color: "#28243a" },
-    { time: 140.8, text: "Flow away, I Luv it Luv it", color: "#28243a" },
+    { time: 140.8, text: "Flow away, \nI Luv it Luv it", color: "#28243a" },
     { time: 144.8, text: "Flow away, 설레 기분이", color: "#28243a" },
     { time: 148.8, text: "너-어-언 어때, 어때 ", color: "#28243a" },
     { time: 152.8, text: "너!무!좋!아! (No!木!揪!啊!)", color: "#87CEEB" },
@@ -816,14 +812,14 @@ const lyricsBySong = {
 
     { time: 170.8, 
       parts: [
-        {text: "We singing like ", color: "#28243a" },
+        {text: "We singing like \n", color: "#28243a" },
         {text: "(Oh- Oh- Oh-)", color: "#87CEEB" }
       ]
     },
     { time: 178.3, text: "Cloud 9, Cloud 9", color: "#28243a" },
     { time: 179.8, 
       parts: [
-        {text: "We singing like ", color: "#28243a" },
+        {text: "We singing like \n", color: "#28243a" },
         {text: "(Oh- Oh-)", color: "#87CEEB" }
       ]
     },
@@ -867,8 +863,8 @@ const lyricsBySong = {
   "Flame": [
     { time: 24.5, text: "끝없이 오른 열기 번지는 뜨거움", color: "#28243a" },
     { time: 26.8, text: "흐릿해지는 현실 선명한 이건 꿈", color: "#28243a" },
-    { time: 30, text: "더욱 깊이 파고드는 fire in the air", color: "#28243a" },
-    { time: 33, text: "낯선 이끌림, 깨지 않는 dream, \n what is happening", color: "#28243a" },
+    { time: 30, text: "더욱 깊이 파고드는 \nfire in the air", color: "#28243a" },
+    { time: 33, text: "낯선 이끌림, \n깨지 않는 dream, \n what is happening", color: "#28243a" },
   
     { time: 36.5, 
       parts: [
@@ -882,13 +878,13 @@ const lyricsBySong = {
         {text: "want that", color: "#FF4500" }
       ]
     },
-    { time: 39.8, text: "시간이 멈춘 듯한 무언가 달라진 느낌", color: "#28243a" },
-    { time: 43, text: "너머로 들리는 cryptic message", color: "#28243a" },
+    { time: 39.8, text: "시간이 멈춘 듯한 \n무언가 달라진 느낌", color: "#28243a" },
+    { time: 43, text: "너머로 들리는 \ncryptic message", color: "#28243a" },
     { time: 46, text: "귀를 막아봐도 소용없는데", color: "#28243a" },
 
     { time: 49, 
       parts: [
-        {text: "Wake up, wake up ", color: "#FF4500" },
+        {text: "Wake up, wake up \n", color: "#FF4500" },
         {text: "멈추지 않아", color: "#28243a" },
       ]
     },
@@ -931,7 +927,7 @@ const lyricsBySong = {
         {text: "줄게(啾給)", color: "#FF4500" }
       ]
     },
-    { time: 75.3, text: "가보지 못했던 저 끝까지 울리도록", color: "#28243a" },
+    { time: 75.3, text: "가보지 못했던 \n 저 끝까지 울리도록", color: "#28243a" },
   
     { time: 78.3, 
       parts: [
@@ -947,7 +943,7 @@ const lyricsBySong = {
     },
     { time: 81.3, text: "두렵지 않아, 이제 난", color: "#28243a" },
 
-    { time: 85, text: "It's official, it's official now, \n it's official now", color: "#28243a" },
+    { time: 85, text: "It's official, \nit's official now, \n it's official now", color: "#28243a" },
 
     { time: 89.8, text: "겁내지 말고 빛을 향해 달려가", color: "#28243a" },
     { time: 92.8, text: "닿을수록 찬란해 질 테니", color: "#28243a" },
@@ -960,19 +956,19 @@ const lyricsBySong = {
         {text: "(더 더)(豆 豆)", color: "#FF4500" }
       ]
     },
-    { time: 104.5, text: "Yeah 스릴 넘치는 느낌 통하는 법", color: "#28243a" },
+    { time: 104.5, text: "Yeah 스릴 넘치는 \n느낌 통하는 법", color: "#28243a" },
     { time: 106.3, text: "아슬해진 시간 위를 건너가", color: "#28243a" },
     { time: 108.5, text: "(더 멀리) 꿈이 더 커져", color: "#28243a" },
     { time: 110.5, 
       parts: [
         {text: "One, two, three \n", color: "#FF4500" },
-        {text: "숨을 크게 쉬고 come with me", color: "#28243a" },
+        {text: "숨을 크게 쉬고 \ncome with me", color: "#28243a" },
       ]
     },
 
     { time: 113.5, 
       parts: [
-        {text: "Wake up, wake up ", color: "#FF4500" },
+        {text: "Wake up, wake up \n", color: "#FF4500" },
         {text: "멈추지 않아", color: "#28243a" },
       ]
     },
@@ -1015,7 +1011,7 @@ const lyricsBySong = {
         {text: "줄게 (啾給)", color: "#FF4500" }
       ]
     },
-    { time: 140, text: "가보지 못했던 저 끝까지 울리도록", color: "#28243a" },
+    { time: 140, text: "가보지 못했던 \n 저 끝까지 울리도록", color: "#28243a" },
   
     { time: 143.2, 
       parts: [
@@ -1086,7 +1082,7 @@ const lyricsBySong = {
         {text: "줄게(啾給)", color: "#FF4500" }
       ]
     },
-    { time: 189.5, text: "가보지 못했던 저 끝까지 울리도록", color: "#28243a" },
+    { time: 189.5, text: "가보지 못했던 \n 저 끝까지 울리도록", color: "#28243a" },
   
     { time: 192.5, 
       parts: [
@@ -1130,7 +1126,7 @@ const lyricsBySong = {
         {text: "tab tab", color: "#87CEEB" }
       ]
     },
-    { time: 40.8, text: "단비를 맞듯 내린 빛에 뛰어 들어가", color: "#28243a" },
+    { time: 40.8, text: "단비를 맞듯 내린 \n빛에 뛰어 들어가", color: "#28243a" },
     { time: 45, text: "별이 만든 리듬 속에 \n 너와 날 지금 get it", color: "#28243a" },
     
     { time: 48.8, text: "눈부셔 come come \n come to me", color: "#28243a" },
@@ -1146,7 +1142,7 @@ const lyricsBySong = {
         {text: "ohh ahh", color: "#87CEEB" }
       ]
     },
-    { time: 56.5, text: "속삭여 talk talk talk to me", color: "#28243a" },
+    { time: 56.5, text: "속삭여 talk talk\ntalk to me", color: "#28243a" },
     { time: 60.5, 
       parts: [
         {text: "주저 없이 ", color: "#28243a" },
@@ -1230,7 +1226,7 @@ const lyricsBySong = {
     },
     { time: 103.5, 
       parts: [
-        {text: "현실에서 마주친 환상 ", color: "#28243a" },
+        {text: "현실에서 마주친 환상 \n", color: "#28243a" },
         {text: "어때(喔de)", color: "#87CEEB" }
       ]
     },
@@ -1250,7 +1246,7 @@ const lyricsBySong = {
         {text: "ohh ahh", color: "#87CEEB" }
       ]
     },
-    { time: 121.5, text: "속삭여 talk talk talk to me", color: "#28243a" },
+    { time: 121.5, text: "속삭여 talk talk \ntalk to me", color: "#28243a" },
     { time: 125.5, 
       parts: [
         {text: "주저 없이 ", color: "#28243a" },
@@ -1291,7 +1287,7 @@ const lyricsBySong = {
     },
     { time: 144, text: "느껴 맘껏 ohh ohh ohh ahh", color: "#28243a" },
 
-    { time: 147, text: "좀 더 너를 듣고 싶어 난 한발 다가가", color: "#28243a" },
+    { time: 147, text: "좀 더 너를 듣고 싶어 \n난 한발 다가가", color: "#28243a" },
     { time: 152.5, text: "So tell me \n what you wanna do", color: "#28243a" },
     { time: 155.3, text: "부딪힌 시선에 터지는 chemistry", color: "#28243a" },
     { time: 159, text: "우리가 발견한 universe", color: "#28243a" },
@@ -1311,7 +1307,7 @@ const lyricsBySong = {
         {text: "ohh ahh", color: "#87CEEB" }
       ]
     },
-    { time: 174.5, text: "속삭여 talk talk talk to me", color: "#28243a" },
+    { time: 174.5, text: "속삭여 talk talk \ntalk to me", color: "#28243a" },
     { time: 178.5, 
       parts: [
         {text: "주저 없이 ", color: "#28243a" },
@@ -1354,11 +1350,11 @@ const lyricsBySong = {
   "My Turn": [
     { time: 14.8, text: "보.여.줄.게(波.呦.啾.給) \n 크.래.비.티", color: "#D40000" },
     { time: 18.5, text: "시간이 됐지 answer \n (됐지 answer)", color: "#28243a" },
-    { time: 21, text: "머리 굴려 넌 애써 (굴려 넌 애써)", color: "#28243a" },
+    { time: 21, text: "머리 굴려 넌 애써 \n(굴려 넌 애써)", color: "#28243a" },
     { time: 23.5, 
       parts: [
         {text: "보여줄 테니 자 \n", color: "#28243a" },
-        {text: "다음 다음 다음 다음(當 當 當 當)", color: "#D40000" }
+        {text: "다음 다음 다음 다음(當*4)", color: "#D40000" }
       ]
     },
     { time: 26, 
@@ -1368,7 +1364,7 @@ const lyricsBySong = {
       ]
     },
 
-    { time: 29.5, text: "현재에 두 눈을 떠 더 막을 수는 없어", color: "#28243a" },
+    { time: 29.5, text: "현재에 두 눈을 떠 \n더 막을 수는 없어", color: "#28243a" },
     { time: 32, text: "진짜는 마지막에 터지는 법 \n burn up the world", color: "#28243a" },
     { time: 34.5, 
       parts: [
@@ -1397,13 +1393,13 @@ const lyricsBySong = {
     },
 
     { time: 45.5, text: "기대해도 좋아 이건 아직 teaser", color: "#28243a" },
-    { time: 48, text: "예상을 뒤집어 놔 모두다 귀 기울여", color: "#28243a" },
+    { time: 48, text: "예상을 뒤집어 놔 \n 모두다 귀 기울여", color: "#28243a" },
 
     { time: 50.8, text: "한 순간의 이끌림", color: "#28243a" },
     { time: 53.3, text: "발걸음도 trippin'", color: "#28243a" },
 
-    { time: 56, text: "Back around, back around", color: "#28243a" },
-    { time: 57, text: "Back around, back around", color: "#28243a" },
+    { time: 56, text: "Back around, \nback around", color: "#28243a" },
+    { time: 57, text: "Back around, \nback around", color: "#28243a" },
     { time: 58.2, 
       parts: [
         {text: "지나간 기억들은 더 깊이 \n", color: "#28243a" },
@@ -1424,10 +1420,10 @@ const lyricsBySong = {
 
     { time: 69, text: "Vroom Vroom Vroom*3 Skrt", color: "#28243a" },
     { time: 71.8, text: "Vroom Vroom Vroom*3 Skrt", color: "#28243a" },
-    { time: 74, text: "Get out of my way \n I don't care what you got", color: "#28243a" },
+    { time: 74, text: "Get out of my way \n I don't care \nwhat you got", color: "#28243a" },
     { time: 76.8, 
       parts: [
-        {text: "아무도 날 막을 수 없어 \n", color: "#28243a" },
+        {text: "아무도 날 막을 수 없어\n", color: "#28243a" },
         {text: "(my turn turn turn)", color: "#D40000" }
       ]
     },
@@ -1435,7 +1431,7 @@ const lyricsBySong = {
     { time: 80.8, 
       parts: [
         {text: "My turn ", color: "#28243a" },
-        {text: "(my turn) ", color: "#D40000" },
+        {text: "(my turn)\n", color: "#D40000" },
         {text: "My turn", color: "#28243a" },
       ]
     },
@@ -1452,7 +1448,7 @@ const lyricsBySong = {
     { time: 96.8, 
       parts: [
         {text: "Turn on ", color: "#28243a" },
-        {text: "GPS \n", color: "#D40000" },
+        {text: "GPS\n", color: "#D40000" },
         {text: "got my eyes on you", color: "#28243a" },
       ]
     },
@@ -1502,8 +1498,8 @@ const lyricsBySong = {
     { time: 133.3, text: "한 순간의 이끌림", color: "#28243a" },
     { time: 136, text: "발걸음도 trippin'", color: "#28243a" },
 
-    { time: 138.8, text: "Back around, back around", color: "#28243a" },
-    { time: 139.8, text: "Back around, back around", color: "#28243a" },
+    { time: 138.8, text: "Back around, \nback around", color: "#28243a" },
+    { time: 139.8, text: "Back around, \nback around", color: "#28243a" },
     { time: 141, 
       parts: [
         {text: "지나간 기억들은 더 깊이 \n", color: "#28243a" },
@@ -1524,7 +1520,7 @@ const lyricsBySong = {
 
     { time: 152, text: "Vroom Vroom Vroom*3 Skrt", color: "#28243a" },
     { time: 154.5, text: "Vroom Vroom Vroom*3 Skrt", color: "#28243a" },
-    { time: 157, text: "Get out of my way \n I don't care what you got", color: "#28243a" },
+    { time: 157, text: "Get out of my way \n I don't care \nwhat you got", color: "#28243a" },
     { time: 159.3, 
       parts: [
         {text: "아무도 날 막을 수 없어 \n", color: "#28243a" },
@@ -1535,7 +1531,7 @@ const lyricsBySong = {
     { time: 163.5, 
       parts: [
         {text: "My turn ", color: "#28243a" },
-        {text: "(my turn) ", color: "#D40000" },
+        {text: "(my turn)\n", color: "#D40000" },
         {text: "My turn", color: "#28243a" },
       ]
     },
@@ -1557,7 +1553,7 @@ const lyricsBySong = {
     { time: 195, text: "크.래.비.티", color: "#D40000" },
 
     { time: 198, text: "Vroom Vroom Vroom*3 Skrt", color: "#28243a" },
-    { time: 200.8, text: "Get out of my way \n I don't care what you got", color: "#28243a" },
+    { time: 200.8, text: "Get out of my way \n I don't care \nwhat you got", color: "#28243a" },
     { time: 203.2, 
       parts: [
         {text: "아무도 날 막을 수 없어 \n", color: "#28243a" },
@@ -1568,7 +1564,7 @@ const lyricsBySong = {
     { time: 207, 
       parts: [
         {text: "My turn ", color: "#28243a" },
-        {text: "(my turn) ", color: "#D40000" },
+        {text: "(my turn)\n", color: "#D40000" },
         {text: "My turn", color: "#28243a" },
       ]
     },
@@ -1588,7 +1584,7 @@ const lyricsBySong = {
 
     { time: 20, 
       parts: [
-        {text: "Well ", color: "#8B2500" },
+        {text: "Well \n", color: "#8B2500" },
         {text: "딱 봐도 평범치 않은 scale", color: "#28243a" }
       ]
     },
@@ -1600,11 +1596,11 @@ const lyricsBySong = {
     },
 
     { time: 28.8, text: "I stomp on you haters", color: "#28243a" },
-    { time: 29.8, text: "I don't hear a thing you say", color: "#28243a" },
-    { time: 31.5, text: "한번 뜨면 game over 너네 다 후퇴", color: "#28243a" },
+    { time: 29.8, text: "I don't hear \n a thing you say", color: "#28243a" },
+    { time: 31.5, text: "한번 뜨면 game over \n 너네 다 후퇴", color: "#28243a" },
     { time: 33.5, text: "막아 봤자 어차피 밀리게 돼", color: "#28243a" },
     { time: 35.8, text: "I'm outta control", color: "#28243a" },
-    { time: 36.5, text: "난 마치 람보 \n you know I'll never break", color: "#28243a" },
+    { time: 36.5, text: "난 마치 람보 you know \n I'll never break", color: "#28243a" },
   
     { time: 39, 
       parts: [
@@ -1644,12 +1640,12 @@ const lyricsBySong = {
     { time: 77.5, text: "뻔한 motion에도 \n take take trouble", color: "#28243a" },
     { time: 79.5, text: "소용없이 suffer \n 표현 못할 이 tremble", color: "#28243a" },
     { time: 81.8, text: "느껴져 시선 이제 즐겨 미쳐", color: "#28243a" },
-    { time: 83.8, text: "Unstoppable, \n trigger 당겨 uh uh blocker", color: "#28243a" },
+    { time: 83.8, text: "Unstoppable, trigger \n 당겨 uh uh blocker", color: "#28243a" },
 
     { time: 87, 
       parts: [
         {text: "이젠 익숙하다 착각해도 좋아  \n", color: "#28243a" },
-        {text: "(좋아)(球啊)", color: "#8B2500" }
+        {text: "(좋아)(揪啊)", color: "#8B2500" }
       ]
     },
     { time: 92.8, text: "그럴수록 난 니 반응을 즐겨", color: "#28243a" },
@@ -1680,10 +1676,10 @@ const lyricsBySong = {
     { time: 122.5, text: "(크.래.비.티)", color: "#8B2500" },
 
     { time: 125, text: "어딜 가든 모든 시선이 다 쏠려", color: "#28243a" },
-    { time: 127, text: "보자마자 풀려버린 두 다리가 떨려", color: "#28243a" },
+    { time: 127, text: "보자마자 풀려버린 \ㄙ두 다리가 떨려", color: "#28243a" },
     { time: 129.5, text: "뼈 속까지 느껴진 이 tension", color: "#28243a" },
     { time: 131.5, text: "Like a Mammoth", color: "#28243a" },
-    { time: 132.5, text: "가는 길이 달라 infinite direction", color: "#28243a" },
+    { time: 132.5, text: "가는 길이 달라 \infinite direction", color: "#28243a" },
 
     { time: 135.3, text: "만족이란 아예 없는 듯이 yeah", color: "#28243a" },
     { time: 139.7, text: "우린 점점 더 강렬해져 가", color: "#28243a" },
@@ -1739,13 +1735,13 @@ const lyricsBySong = {
     { time: 33, text: "Oh yeah yeah yeah", color: "#28243a" },
     { time: 34.5, 
       parts: [
-        {text: "손 안에 쥔 불씨 ", color: "#28243a" },
+        {text: "손 안에 쥔 불씨 \n", color: "#28243a" },
         {text: "yeah yeah yeah", color: "#8B3A3A" }
       ]
     },
     { time: 36.8, 
       parts: [
-        {text: "한 순간에 번질 ", color: "#28243a" },
+        {text: "한 순간에 번질 \n", color: "#28243a" },
         {text: "yeah yeah yeah", color: "#8B3A3A" }
       ]
     },
@@ -1783,8 +1779,8 @@ const lyricsBySong = {
     { time: 52.5, text: "바래 왔던 (Let's roll)", color: "#28243a" },
 
     { time: 54.5, text: "멈출 수가 없어 \n 숨막히는 다음 Stage", color: "#28243a" },
-    { time: 61.5, text: "Cause I know cause I know", color: "#28243a" },
-    { time: 64, text: "조금 더 자극해봐 날 무너진 이성이", color: "#28243a" },
+    { time: 61.5, text: "Cause I know \ncause I know", color: "#28243a" },
+    { time: 64, text: "조금 더 자극해봐 \n날 무너진 이성이", color: "#28243a" },
     { time: 67, text: "고장이 나버려 고칠 수가 없게", color: "#28243a" },
 
     { time: 69.8, text: "좀 더 거친 길을 가는 거야", color: "#28243a" },
@@ -1810,23 +1806,23 @@ const lyricsBySong = {
     { time: 94.5, text: "Oh yeah yeah yeah", color: "#28243a" },
     { time: 95.8, 
       parts: [
-        {text: "진짜만을 말해 ", color: "#28243a" },
+        {text: "진짜만을 말해 \n", color: "#28243a" },
         {text: "yeah yeah yeah", color: "#8B3A3A" }
       ]
     },
     { time: 98, 
       parts: [
-        {text: "정적을 깨워내 ", color: "#28243a" },
+        {text: "정적을 깨워내 \n", color: "#28243a" },
         {text: "yeah yeah yeah", color: "#8B3A3A" }
       ]
     },
-    { time: 100.5, text: "결국엔 또 넘어 버릴 테니 Red line", color: "#28243a" },
-    { time: 102.8, text: "모두 다 Zip it up zip in it up", color: "#28243a" },
+    { time: 100.5, text: "결국엔 또 넘어 버릴 테니 \nRed line", color: "#28243a" },
+    { time: 102.8, text: "모두 다 Zip it up \nzip in it up", color: "#28243a" },
     { time: 104, text: "한번 더 불을 지펴", color: "#28243a" },
 
     { time: 105, text: "거기까지 더 Loose 한 건 \n Break a rule", color: "#28243a" },
     { time: 107.5, text: "좀 Easy 하게 가보자고 \n 자유로운 걸 이미", color: "#28243a" },
-    { time: 110, text: "따라와봐 더 우린 Roll the dice", color: "#28243a" },
+    { time: 110, text: "따라와봐 더 우린 \nRoll the dice", color: "#28243a" },
     { time: 112.5, text: "어디로 튈지 몰라 High up", color: "#28243a" },
     { time: 113.8, 
       parts: [
@@ -1836,8 +1832,8 @@ const lyricsBySong = {
     },
 
     { time: 115.8, text: "멈출 수가 없어 \n 숨막히는 다음 Stage", color: "#28243a" },
-    { time: 122.3, text: "Cause I know cause I know", color: "#28243a" },
-    { time: 125.3, text: "조금 더 자극해봐 날 무너진 이성이", color: "#28243a" },
+    { time: 122.3, text: "Cause I know \n cause I know", color: "#28243a" },
+    { time: 125.3, text: "조금 더 자극해봐 \n 날 무너진 이성이", color: "#28243a" },
     { time: 128.2, text: "고장이 나버려 고칠 수가 없게", color: "#28243a" },
 
     { time: 130.8, text: "좀 더 거친 길을 가는 거야", color: "#28243a" },
@@ -1900,11 +1896,11 @@ const lyricsBySong = {
     },
     { time: 173.5, text: "Get outta my way \n 자유로워지는 순간", color: "#28243a" },
 
-    { time: 176, text: "이제 모두 외쳐 Say my name", color: "#28243a" },
+    { time: 176, text: "이제 모두 외쳐 \n Say my name", color: "#28243a" },
     { time: 178.5, text: "끝나지 않을걸 In the game", color: "#28243a" },
     { time: 181.2, text: "낮이 밤이 돼 더 짙게", color: "#28243a" },
     { time: 183.5, text: "악몽도 꿈이 될 Never stop", color: "#28243a" },
-    { time: 186.3, text: "누가 뭐라 해도 Just let me go", color: "#28243a" },
+    { time: 186.3, text: "누가 뭐라 해도 \n Just let me go", color: "#28243a" },
     { time: 188.5, text: "끝을 보기 전엔 멈출 수 없어", color: "#28243a" },
     { time: 191.3, text: "하나 둘 Git it up", color: "#28243a" },
     { time: 194, text: "위태로운 여기서 \n 난 중심을 지켜 나아가", color: "#28243a" },
@@ -2503,6 +2499,301 @@ const lyricsBySong = {
   { time: 206, text: "(歡呼)", color: "#00A878" },
   ],
 
+  "Gas Pedal": [
+    { time: 2.5, text: "Yeah, what's good", color: "#28243a" },
+    { time: 4.8, text: "달.려.보.자(塔.六.波.炸)", color: "#D98A4E" },
+    { time: 7, text: "크.래.비.티", color: "#D98A4E" },
+
+    { time: 9.5, text: "Yeah, it's like a dream \n I'm livin'", color: "#28243a" },
+    { time: 12.5, text: "삶에 꽃이 피는", color: "#28243a" },
+    { time: 14.8, text: "나를 비추는 저 해가 뜨고 지는", color: "#28243a" },
+
+    { time: 18.5, 
+      parts: [
+        {text: "City to city 더 \n", color: "#28243a" },
+        {text: "불타올라(補他歐拉)", color: "#D98A4E" }
+      ]
+    },
+    { time: 20.5, 
+      parts: [
+        {text: "미쳐 더 loco 다 \n", color: "#28243a" },
+        {text: "돌고 돌아(都勾 都拉)", color: "#D98A4E" }
+      ]
+    },
+    { time: 23, text: "점점 사나워지네", color: "#28243a" },
+    { time: 25.5, text: "지켜봐 baby \n let me see you \n drop it low", color: "#28243a" },
+
+    { time: 27.8, text: "정상 위로 별을 따라 \nwe climbin'", color: "#28243a" },
+    { time: 31.5, text: "올라가 내가 보여줄 테니", color: "#28243a" },
+    { time: 36.5, 
+      parts: [
+        {text: "Yeah 난 이 밤을 관통해 baby \n", color: "#28243a" },
+        {text: "소란 사이(速拉 薩伊)", color: "#D98A4E" }
+      ]
+    },
+    { time: 39.3, 
+      parts: [
+        {text: "그런 고민하지 마 어서 \n", color: "#28243a" },
+        {text: "올라타(五拉他)", color: "#D98A4E" }
+      ]
+    },
+    { time: 41, text: "So please, tell me that \n you're ready", color: "#28243a" },
+  
+    { time: 46, text: "Swerve, \n to the left now", color: "#28243a" },
+    { time: 48.5, text: "Gas pedal gas pedal \n gas pedal uh!", color: "#D98A4E" },
+    { time: 50.5, 
+      parts: [
+        {text: "Run ", color: "#28243a" },
+        {text: "(내게 미쳐)(內給 米秋)\n", color: "#D98A4E" },
+        {text: "We swervin' all night", color: "#28243a" },
+      ]
+    },
+
+    { time: 55, text: "밟아 난 안보여 너밖에 \n 난 안 보여 ooh yeah", color: "#28243a" },
+    { time: 59.5, text: "Swerve, \n to the right now", color: "#28243a" },
+    { time: 62.3, text: "Gas pedal gas pedal \n gas pedal uh!", color: "#D98A4E" },
+  
+    { time: 64.2, text: "밟고 올라가 내 속도계를 부셔", color: "#28243a" },
+    { time: 66.3, text: "깔린 BGM은 easy ridin' risky like woah", color: "#28243a" },
+  
+    { time: 68.5, text: "Making a new track uh", color: "#28243a" },
+    { time: 69.3, text: "계속해서 밟아 dizzy curve에", color: "#28243a" },
+    { time: 71, text: "바닥이 더 뜨거워지게 \n 난 앞만 보고 걸어", color: "#28243a" },
+
+    { time: 74, text: "두 손을 모아, 하늘에 빌어", color: "#28243a" },
+    { time: 76.3, text: "Only keep it real \n ah yeah", color: "#28243a" },
+    { time: 78.5, text: "불을 막 뿜어, \n V12 엔진 ready to zoom", color: "#28243a" },
+  
+    { time: 82.5, text: "정상 위로 별을 따라 \n we climbin'", color: "#28243a" },
+    { time: 86.5, text: "올라가 내가 보여줄 테니", color: "#28243a" },
+    { time: 91.8, text: "닿을 수 없는 한계까지 \n손을 뻗어봐", color: "#28243a" },
+    { time: 96, text: "So please, tell me that \nyou're ready", color: "#28243a" },
+  
+    { time: 101, text: "Swerve, \n to the left now", color: "#28243a" },
+    { time: 103.3, text: "Gas pedal gas pedal \n gas pedal uh!", color: "#D98A4E" },
+    { time: 105.8, 
+      parts: [
+        {text: "Run ", color: "#28243a" },
+        {text: "(내게 미쳐)(內給 米秋)\n", color: "#D98A4E" },
+        {text: "We swervin' all night", color: "#28243a" },
+      ]
+    },
+
+    { time: 110.3, text: "밟아 난 안보여 너밖에 \n 난 안 보여 ooh yeah", color: "#28243a" },
+    { time: 114.8, text: "Swerve, \n to the right now", color: "#28243a" },
+    { time: 117, text: "Gas pedal gas pedal \n gas pedal uh!", color: "#D98A4E" },
+  
+    { time: 119, text: "녹아버릴 듯 뜨거운 신호", color: "#28243a" },
+    { time: 123.8, text: "내 안에 네가 새겨진 이유", color: "#28243a" },
+
+    { time: 128.3, text: "You know nobody can do what you do", color: "#28243a" },
+    { time: 131.5, text: "Do what you do", color: "#28243a" },
+    { time: 133, text: "You know nobody can do what you do", color: "#28243a" },
+    { time: 135, text: "Nobody but you", color: "#28243a" },
+    { time: 138, text: "Can do what you do", color: "#28243a" },
+
+    { time: 139.8, text: "Swerve, to the left now", color: "#28243a" },
+    { time: 142, text: "Gas pedal gas pedal \n gas pedal uh!", color: "#D98A4E" },
+    { time: 144.5, 
+      parts: [
+        {text: "Run ", color: "#28243a" },
+        {text: "(내게 미쳐)(內給 米秋)\n", color: "#D98A4E" },
+        {text: "We swervin' all night", color: "#28243a" },
+      ]
+    },
+
+    { time: 149, text: "밟아 난 안보여 걱정 따윈 집어쳐 \n ooh yeah", color: "#28243a" },
+    { time: 153.5, text: "Swerve, \n to the right now", color: "#28243a" },
+    { time: 156, text: "Gas pedal gas pedal \n gas pedal uh!", color: "#D98A4E" },
+
+    { time: 157.5, text: "천천히", color: "#28243a" },
+    { time: 161, text: "붉어지는 도시 빛", color: "#28243a" },
+    { time: 162.8, 
+      parts: [
+        {text: "Ain't nobody 날 막을 수 \n", color: "#28243a" },
+        {text: "없네(歐內)", color: "#D98A4E" }
+      ]
+    },
+    { time: 165, 
+      parts: [
+        {text: "Ain't nobody 날 막을 수 \n", color: "#28243a" },
+        {text: "없네(歐內)", color: "#D98A4E" }
+      ]
+    },
+
+    { time: 166.8, text: "천천히", color: "#28243a" },
+    { time: 167.5, text: "천천히 올라가 \nwe ride or die", color: "#28243a" },
+    { time: 169, text: "아무리 빠르게 빠르게 가도", color: "#28243a" },
+    { time: 170.5, 
+      parts: [
+        {text: "break 절대 \n", color: "#28243a" },
+        {text: "밟지 않아(巴幾 啊那)", color: "#D98A4E" }
+      ]
+    },
+    { time: 171.8, text: "천천히 올라타봐 every night", color: "#28243a" },
+    { time: 173.8, text: "이렇게 빠르게 빠르게 가는데도", color: "#28243a" },
+    { time: 175.5, text: "No break uh", color: "#D98A4E" },
+
+    { time: 176.3, text: "Swerve, \n to the left now", color: "#28243a" },
+    { time: 178.8, text: "Gas pedal gas pedal \n gas pedal uh!", color: "#D98A4E" },
+    { time: 183.5, text: "Gas pedal gas pedal \n gas pedal uh!", color: "#28243a" },
+
+    { time: 185.5, text: "Swerve, \n to the right now", color: "#28243a" },
+    { time: 188, text: "Gas pedal gas pedal \n gas pedal uh!", color: "#D98A4E" },
+    { time: 192.5, text: "Gas pedal gas pedal \n gas pedal uh!", color: "#28243a" },
+    { time: 195, text: "(歡呼)", color: "#D98A4E" },
+  ],
+
+  "Adrenaline": [
+    { time: 2, text: "(It's time to get that adrenaline going \n Baby gimme one shot)", color: "#28243a" },
+    { time: 7.5, text: "크.래.비.티", color: "#5FB8A8" },
+
+    { time: 10, text: "어지럽고 아찔한 fever", color: "#28243a" },
+    { time: 14, text: "커지는 눈, 가쁜 숨, \n 아찔한 기분은 high", color: "#28243a" },
+    { time: 19, text: "So high", color: "#28243a" },
+    { time: 20.5, text: "(So high)", color: "#5FB8A8" },
+    { time: 21.5, text: "So high", color: "#28243a" },
+
+    { time: 23, text: "널 알게 된 그 후로, \n 너를 앓고 있어 oh", color: "#28243a" },
+
+    { time: 26.5, text: "No turning back", color: "#28243a" },
+    { time: 28.5, text: "내 까만 눈 속엔", color: "#28243a" },
+    { time: 30.8, text: "너의 눈빛 떨린 kiss \n 널 향한 기대로만", color: "#28243a" },
+
+    { time: 34.8, 
+      parts:[
+        {text: "가쁘게 뛰는 심장이 \n it's so high", color: "#28243a" },
+        {text: "(So high)", color: "#5FB8A8" },
+      ]
+    },
+    { time: 37, text: "정상을 벗어난 이 느낌 so high", color: "#28243a" },
+
+    { time: 39.5, text: "I push it up to the limit, \n won't stop till I get it", color: "#28243a" },
+
+    { time: 43, text: "지독히 너 땜에 아프다 해도", color: "#28243a" },
+    { time: 47, text: "I'm ready, get ready \n (get ready for ya)", color: "#28243a" },
+    { time: 51, text: "조금은 거친 attitude \n 터질 듯한 mood", color: "#28243a" },
+    { time: 55.5, text: "Can you feel it?", color: "#5FB8A8" },
+
+    { time: 57.8, text: "느껴져 hot like a big rush of adrenaline", color: "#28243a" },
+    { time: 61.5, text: "내 심장에(內 心臟欸) shot", color: "#5FB8A8" },
+    { time: 64, 
+      parts:[
+        {text: "Come on give me \n one shot \n", color: "#28243a" },
+        {text: "One more shot", color: "#5FB8A8" },
+      ]
+    },
+    { time: 66, 
+      parts:[
+        {text: "Come on give me one \n", color: "#28243a" },
+        {text: "shot shot shot", color: "#5FB8A8" },
+      ]
+    },
+
+    { time: 68, text: "Adrenaline 몸이 떨려와", color: "#28243a" },
+    { time: 73, text: "전율이 타고 올라", color: "#28243a" },
+    { time: 74.5, text: "내게 줘 one shot of adrenaline", color: "#28243a" },
+
+    { time: 76.5, text: "크.래.비.티", color: "#5FB8A8" },
+    { time: 78.5, text: "Adrenaline", color: "#28243a" },
+    { time: 80.5, text: "아.드레.날.린(A.dre.na.line)", color: "#5FB8A8" },
+    { time: 82.5, text: "짜릿해 a shot of adrenaline", color: "#28243a" },
+
+    { time: 85, text: "They tryna tell me", color: "#28243a" },
+    { time: 85.5, text: "That I'm crazy cuz \n I'll be fast", color: "#28243a" },
+    { time: 87, text: "감각이 둔해져 \n 내 숨소리가 pain", color: "#28243a" },
+    { time: 89, 
+      parts:[
+        {text: "거칠어져 팽창해 더 \n", color: "#28243a" },
+        {text: "knock knock\n", color: "#5FB8A8" },
+        {text: "pumping 하다 ", color: "#28243a" },
+        {text: "bang", color: "#5FB8A8" },
+      ]
+    },
+    { time: 91.5, text: "느껴 감싸 날 dominate", color: "#28243a" },
+
+    { time: 92.8, 
+      parts:[
+        {text: "Like a fight scene \n 짜릿한 이 ", color: "#28243a" },
+        {text: "느낌(呢gim)", color: "#5FB8A8" },
+      ]
+    },
+    { time: 94.8, 
+      parts:[
+        {text: "내 몸 안 adrenaline \n 은 몰아치는 ", color: "#28243a" },
+        {text: "lightening", color: "#5FB8A8" },
+      ]
+    },
+    { time: 96.5, text: "너는 내게 급속히 온몸으로 \n 다 퍼져가는 venom", color: "#28243a" },
+    { time: 99.5, text: "너라면 기꺼이 overdose ha", color: "#28243a" },
+
+    { time: 101.5, text: "지독히 너 땜에 아프다 해도", color: "#28243a" },
+    { time: 105.5, text: "I'm ready, get ready \n (get ready for ya)", color: "#28243a" },
+    { time: 109.5, text: "조금은 거친 attitude \n 터질 듯한 mood", color: "#28243a" },
+    { time: 114, text: "Can you feel it?", color: "#5FB8A8" },
+
+    { time: 116, text: "느껴져 hot like a big rush of adrenaline", color: "#28243a" },
+    { time: 120, text: "내 심장에(內 心臟欸) shot", color: "#5FB8A8" },
+    { time: 122.5, 
+      parts:[
+        {text: "Come on give me \n one shot \n", color: "#28243a" },
+        {text: "One more shot", color: "#5FB8A8" },
+      ]
+    },
+    { time: 124.5, 
+      parts:[
+        {text: "Come on give me one \n", color: "#28243a" },
+        {text: "shot shot shot", color: "#5FB8A8" },
+      ]
+    },
+
+    { time: 126.5, text: "Adrenaline 몸이 떨려와", color: "#28243a" },
+    { time: 131.5, text: "전율이 타고 올라", color: "#28243a" },
+    { time: 132.5, text: "내게 줘 one shot of adrenaline", color: "#28243a" },
+
+    { time: 135, text: "끝없이 흘러넘치는 adrenaline", color: "#28243a" },
+    { time: 137, text: "자유를 got it 이 순간 \n we livin' it", color: "#28243a" },
+    { time: 139, text: "Yeah 이 기분 똑같이 errday", color: "#28243a" },
+    { time: 141, text: "널 보면 두 배로 \n feel in my vein", color: "#28243a" },
+
+    { time: 143, text: "미친 듯 뛰는 맥박이", color: "#28243a" },
+    { time: 145, text: "너에게 닿길", color: "#28243a" },
+    { time: 147, text: "멈추지 않게", color: "#28243a" },
+
+    { time: 149.5, text: "터트려 hot like a big rush of adrenaline", color: "#28243a" },
+    { time: 153.5, text: "내 심장에(內 心臟欸) shot", color: "#5FB8A8" },
+    { time: 156, 
+      parts:[
+        {text: "Come on give me \n one shot \n", color: "#28243a" },
+        {text: "One more shot", color: "#5FB8A8" },
+      ]
+    },
+    { time: 158, 
+      parts:[
+        {text: "Come on give me one \n", color: "#28243a" },
+        {text: "shot shot shot", color: "#5FB8A8" },
+      ]
+    },
+
+    { time: 160, text: "Adrenaline 몸이 떨려와", color: "#28243a" },
+    { time: 164.5, text: "전율이 타고 올라", color: "#28243a" },
+    { time: 166, text: "내게 줘 one shot of adrenaline", color: "#28243a" },
+
+    { time: 168, text: "Adrenaline, \n oh adrenaline, \n oh adrenaline", color: "#28243a" },
+    { time: 174, text: "Ooh yeah", color: "#28243a" },
+    { time: 174.5, text: "Can I get it? \n Can I get your love shot?", color: "#28243a" },
+
+    { time: 176.5, text: "Adrenaline, \n oh adrenaline, \n oh adrenaline", color: "#28243a" },
+    { time: 182.5, text: "Ooh yeah", color: "#28243a" },
+    { time: 183, text: "Can I get it? \n Can I get your love shot?", color: "#28243a" },
+
+    { time: 185, text: "크.래.비.티", color: "#5FB8A8" },
+    { time: 187, text: "Adrenaline", color: "#28243a" },
+    { time: 189, text: "아.드레.날.린(A.dre.na.line)", color: "#5FB8A8" },
+    { time: 191.5, text: "짜릿해 a shot of adrenaline", color: "#28243a" },
+    { time: 193.5, text: "(歡呼)", color: "#5FB8A8" },
+  ],
+
   "Maybe Baby (좋아하나봐)": [
     { time: 8.5, text: "반짝여 저기 유일한", color: "#28243a" },
     { time: 12.8, text: "이 밤을 비추고 있는 너 \n", color: "#28243a" },       
@@ -2515,7 +2806,7 @@ const lyricsBySong = {
     { time: 31.3, text: "한 곳만을 봐 \n 내 눈을 멀게 해도 돼 넌", color: "#28243a" },
 
     { time: 35.7, text: "달이 좀 더 기울 때", color: "#28243a" },
-    { time: 37.8, text: "확실한 걸 알게 돼 내가 느끼는 걸", color: "#28243a" },
+    { time: 37.8, text: "확실한 걸 알게 돼 \n 내가 느끼는 걸", color: "#28243a" },
     
     { time: 42.5, text: "널 좋아하나 봐", color: "#28243a" },
     { time: 43.8, text: "(세.림.앨.런.정.모)", color: "#FF8FC7" },
@@ -2549,7 +2840,7 @@ const lyricsBySong = {
     { time: 83.8, text: "한 곳만을 봐 \n 내 눈을 멀게 해도 돼 넌", color: "#28243a" },
   
     { time: 88, text: "달이 좀 더 기울 때", color: "#28243a" },
-    { time: 90.3, text: "확실한 걸 알게 돼 내가 느끼는 걸", color: "#28243a" },
+    { time: 90.3, text: "확실한 걸 알게 돼 \n 내가 느끼는 걸", color: "#28243a" },
     
     { time: 94.8, text: "널 좋아하나 봐", color: "#28243a" },
     { time: 96, text: "(세.림.앨.런.정.모)", color: "#FF8FC7" },
@@ -2597,11 +2888,11 @@ const lyricsBySong = {
       ]
     },
 
-    { time: 148.3, text: "Take my shot, ready or not", color: "#28243a" },
+    { time: 148.3, text: "Take my shot, \n ready or not", color: "#28243a" },
     { time: 150.5, text: "Aha aha aha", color: "#FF8FC7" },
     { time: 152.8, text: "Back on top, \n been ready no cap", color: "#28243a" },
     { time: 155, text: "Aha aha aha", color: "#FF8FC7" },
-    { time: 157, text: "Take my shot, ready or not", color: "#28243a" },
+    { time: 157, text: "Take my shot, \n ready or not", color: "#28243a" },
     { time: 159.3, text: "Aha aha aha", color: "#FF8FC7" },
 
     { time: 161.5, text: "Cuz I want you baby", color: "#28243a" },
@@ -3028,11 +3319,11 @@ const lyricsBySong = {
     { time: 9, text: "크.래.비.티", color: "#7057C8" },
 
     { time: 12.5, text: "You're not me, \n 어줍잖은 흉내는 말어", color: "#28243a" },
-    { time: 18.3, text: "You have no say in my life", color: "#28243a" },
+    { time: 18.3, text: "You have no say \n in my life", color: "#28243a" },
 
     { time: 23, 
       parts: [
-        {text: "흐른다고 가만히 두면 ", color: "#28243a" },
+        {text: "흐른다고 가만히 두면 \n", color: "#28243a" },
         {text: "(두면 兔謬)", color: "#7057C8" },
     ]
     },
@@ -3079,28 +3370,28 @@ const lyricsBySong = {
 
     { time: 67, 
       parts: [
-        {text: "VENI VIDI VICI yes ", color: "#7057C8" },
+        {text: "VENI VIDI VICI yes \n", color: "#7057C8" },
         {text: "my world", color: "#28243a" },        
     ]
     },
     { time: 71.8, 
       parts: [
-        {text: "뭐 어때 ", color: "#28243a" }, 
+        {text: "뭐 어때 \n", color: "#28243a" }, 
         {text: "VENI VIDI VICI yes \n", color: "#7057C8" },
         {text: "my world", color: "#28243a" },        
     ]
     },
-    { time: 77.5, text: "하고 싶은 건 다해 나만의 법 안에", color: "#28243a" },
+    { time: 77.5, text: "하고 싶은 건 다해 \n나만의 법 안에", color: "#28243a" },
     { time: 81.5, text: "모든걸 채워 다스려 난", color: "#28243a" },
     { time: 83.8, 
       parts: [
-        {text: "VENI VIDI VICI yes ", color: "#7057C8" },
+        {text: "VENI VIDI VICI yes \n", color: "#7057C8" },
         {text: "my world", color: "#28243a" },        
     ]
     },
     { time: 88.8, 
       parts: [
-        {text: "뭐 어때 ", color: "#28243a" }, 
+        {text: "뭐 어때 \n", color: "#28243a" }, 
         {text: "VENI VIDI VICI yes", color: "#7057C8" },
     ]
     },
@@ -3119,7 +3410,7 @@ const lyricsBySong = {
     },
     { time: 96.5, 
       parts: [
-        {text: "내 말이 곧 법이네 my place uh ", color: "#28243a" }, 
+        {text: "내 말이 곧 법이네 \n my place uh ", color: "#28243a" }, 
         {text: "(du du)", color: "#7057C8" },
     ]
     },
@@ -3157,28 +3448,28 @@ const lyricsBySong = {
 
     { time: 134.8, 
       parts: [
-        {text: "VENI VIDI VICI yes ", color: "#7057C8" },
+        {text: "VENI VIDI VICI yes \n", color: "#7057C8" },
         {text: "my world", color: "#28243a" },        
     ]
     },
     { time: 139.8, 
       parts: [
-        {text: "뭐 어때 ", color: "#28243a" }, 
+        {text: "뭐 어때 \n", color: "#28243a" }, 
         {text: "VENI VIDI VICI yes \n", color: "#7057C8" },
         {text: "my world", color: "#28243a" },        
     ]
     },
-    { time: 145.3, text: "하고 싶은 건 다해 나만의 법 안에", color: "#28243a" },
+    { time: 145.3, text: "하고 싶은 건 다해 \n나만의 법 안에", color: "#28243a" },
     { time: 149.3, text: "모든걸 채워 다스려 난", color: "#28243a" },
     { time: 151.7, 
       parts: [
-        {text: "VENI VIDI VICI yes ", color: "#7057C8" },
+        {text: "VENI VIDI VICI yes \n", color: "#7057C8" },
         {text: "my world", color: "#28243a" },        
     ]
     },
     { time: 156.5, 
       parts: [
-        {text: "뭐 어때 ", color: "#28243a" }, 
+        {text: "뭐 어때 \n", color: "#28243a" }, 
         {text: "VENI VIDI VICI yes", color: "#7057C8" },
     ]
     },
@@ -3192,28 +3483,28 @@ const lyricsBySong = {
   
     { time: 182.8, 
       parts: [
-        {text: "VENI VIDI VICI yes ", color: "#7057C8" },
+        {text: "VENI VIDI VICI yes \n", color: "#7057C8" },
         {text: "my world", color: "#28243a" },        
     ]
     },
     { time: 187.8, 
       parts: [
-        {text: "뭐 어때 ", color: "#28243a" }, 
+        {text: "뭐 어때 \n", color: "#28243a" }, 
         {text: "VENI VIDI VICI yes \n", color: "#7057C8" },
         {text: "my world", color: "#28243a" },        
     ]
     },
-    { time: 193.5, text: "하고 싶은 건 다해 나만의 법 안에", color: "#28243a" },
+    { time: 193.5, text: "하고 싶은 건 다해 \n나만의 법 안에", color: "#28243a" },
     { time: 197.3, text: "모든걸 채워 다스려 난", color: "#28243a" },
     { time: 199.8, 
       parts: [
-        {text: "VENI VIDI VICI yes ", color: "#7057C8" },
+        {text: "VENI VIDI VICI yes \n", color: "#7057C8" },
         {text: "my world", color: "#28243a" },        
     ]
     },
     { time: 204.5, 
       parts: [
-        {text: "뭐 어때 ", color: "#28243a" }, 
+        {text: "뭐 어때 \n", color: "#28243a" }, 
         {text: "VENI VIDI VICI yes", color: "#7057C8" },
     ]
     },
@@ -5555,9 +5846,6 @@ const lyricsBySong = {
   const params = new URLSearchParams(location.search);
   const songName = params.get("song") ||"";
   const lyrics = lyricsBySong[songName] || [];
-  const isStaticSong =
-  songName === "Get Lifted" ||
-  songName === "Knock Knock";
   const videoIds = {
   "Break all the Rules": "iZ7uAa8VGBI",
   "JUMPER": "DgasQFI8ge8",
@@ -5629,7 +5917,6 @@ const startTime = startTimes[songName] || 0;
   let currentIndex = -1;
   let player = null;
   let timer = null;
-  let staticLyrics = false;
 
 function renderLyrics() {
   lyricsBox.innerHTML = "";
@@ -5644,9 +5931,7 @@ function renderLyrics() {
       const span = document.createElement("span");
       span.textContent = chunk;
       span.dataset.color = color || "#3888e8";
-      span.style.color = staticLyrics
-  ? (color || "#3888e8")
-  : "#aaa3bd";
+      span.style.color = "#aaa3bd";
 
       // 只有中文字套用中文專用字型
       if (/[\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFAFF]/.test(chunk)) {
@@ -5663,11 +5948,9 @@ function renderLyrics() {
     line.dataset.index = index;
 
     // 點擊歌詞，讓影片跳到對應時間
-    line.style.cursor = staticLyrics ? "default" : "pointer";
+    line.style.cursor = "pointer";
 
 line.addEventListener("click", () => {
-  if (staticLyrics) return;
-
   if (!player || typeof player.seekTo !== "function") {
     return;
   }
@@ -5712,9 +5995,7 @@ function showLyric(index) {
     const parts = line.querySelectorAll("span");
 
     parts.forEach((part) => {
-      if (staticLyrics) {
-  part.style.color = part.dataset.color;
-} else if (i <= currentIndex) {
+    if (i <= currentIndex) {
   part.style.color = part.dataset.color;
 } else {
   part.style.color = "#aaa3bd";
@@ -5791,7 +6072,7 @@ window.onYouTubeIframeAPIReady = function () {
       playsinline: 1,
       origin: location.origin
     },
-    events: {
+      events: {
       onReady: function (event) {
         event.target.cueVideoById({
           videoId: videoId,
@@ -5800,55 +6081,11 @@ window.onYouTubeIframeAPIReady = function () {
 
         timer = setInterval(syncLyrics, 200);
       },
+
       onError: function (event) {
-  // 101、150：影片不允許嵌入播放
-  if (event.data === 101 || event.data === 150) {
-    staticLyrics = true;
-    lyricsBox.classList.add("static-lyrics");
-
-    // 停止歌詞同步
-    if (timer) {
-      clearInterval(timer);
-      timer = null;
-    }
-
-    // 將影片區塊改成提示文字
-    const oldPlayer = event.target.getIframe();
-    const message = document.createElement("div");
-
-    message.id = "player";
-    message.textContent =
-      "目前無法找到可用的影片嵌入來源 \n 僅提供參考歌詞";
-
-    message.style.cssText = `
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      box-sizing: border-box;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      background: #171717;
-      color: #ffffff;
-      font-size: 15px;
-      text-align: center;
-      white-space: pre-line;
-      font-weight: 700;
-    `;
-
-    oldPlayer.replaceWith(message);
-
-    // 重新顯示整首靜態歌詞
-    currentIndex = -1;
-    renderLyrics();
-
-    return;
-  }
-
-  // 其他錯誤仍保留原本的提示方式
-  lyricsBox.textContent =
-    "影片無法播放，錯誤代碼：" + event.data;
-}
+        lyricsBox.textContent =
+          "影片無法播放，錯誤代碼：" + event.data;
+      }
     }
   });
 };
