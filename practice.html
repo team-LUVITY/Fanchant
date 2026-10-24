@@ -203,6 +203,22 @@
     background: #ffffff;
     border-radius: 16px;
   }
+
+  #songTitle {
+  max-width: 100%;
+  padding: 0 10px;
+  line-height: 1.3;
+}
+}
+
+.mobile-title-break {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .mobile-title-break {
+    display: inline;
+  }
 }
   </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -5926,7 +5942,11 @@ const startTimes = {
 
 const startTime = startTimes[songName] || 0;
 
-  document.getElementById("songTitle").textContent = songName;
+  if (songName === "Maybe Baby (좋아하나봐)") {
+  titleElement.innerHTML = 'Maybe Baby<span class="mobile-title-break"><br></span> (좋아하나봐)';
+} else {
+  titleElement.textContent = songName;
+}
 
   const lyricsBox = document.getElementById("lyricsList");
   const position = document.getElementById("position");
