@@ -203,11 +203,9 @@
   font-size: 16px;
 }
 
-
-
-    .song:hover {
-      background: #FFFFFF;
-    }
+.song:hover {
+   background: #FFFFFF;
+}
 
 .song .favorite-star {
   position: absolute;
@@ -249,6 +247,10 @@
   background: #fff5dc;
 }
 
+.song .favorite-star:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
 
     .song strong {
   display: block;
@@ -394,6 +396,8 @@ h2,
   font-size: 15px;
   font-weight: 700;
 }
+
+
 
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
