@@ -1106,25 +1106,42 @@ linkOverlay.classList.add("show");
 
   
  
-  // 在白色彈窗內向下滑動關閉
-  let touchStartY = 0;
-  let touchStartX = 0;
+  // 白色彈窗內向下滑動關閉，避免觸發下拉重新整理
+let touchStartY = 0;
+let touchStartX = 0;
+let isDraggingSheet = false;
 
-  linkSheet.addEventListener("touchstart", (event) => {
-    touchStartY = event.touches[0].clientY;
-    touchStartX = event.touches[0].clientX;
-  }, { passive: true });
+linkSheet.addEventListener("touchstart", (event) => {
+  touchStartY = event.touches[0].clientY;
+  touchStartX = event.touches[0].clientX;
+  isDraggingSheet = true;
+}, { passive: true });
 
-  linkSheet.addEventListener("touchend", (event) => {
-    const deltaY = event.changedTouches[0].clientY - touchStartY;
-    const deltaX = event.changedTouches[0].clientX - touchStartX;
+linkSheet.addEventListener("touchmove", (event) => {
+  if (!isDraggingSheet) return;
 
-    if (deltaY > 70 && deltaY > Math.abs(deltaX) * 1.2) {
-      linkOverlay.classList.remove("show");
+  const deltaY = event.touches[0].clientY - touchStartY;
+  const deltaX = event.touches[0].clientX - touchStartX;
+
+  // 只處理明顯向下的垂直滑動
+  if (deltaY > 10 && deltaY > Math.abs(deltaX) * 1.2) {
+    if (linkSheet.scrollTop <= 0) {
+      event.preventDefault();
     }
-  }, { passive: true });
+  }
+}, { passive: false });
 
+linkSheet.addEventListener("touchend", (event) => {
+  if (!isDraggingSheet) return;
+  isDraggingSheet = false;
 
+  const deltaY = event.changedTouches[0].clientY - touchStartY;
+  const deltaX = event.changedTouches[0].clientX - touchStartX;
+
+  if (deltaY > 70 && deltaY > Math.abs(deltaX) * 1.2) {
+    linkOverlay.classList.remove("show");
+  }
+}, { passive: true });
 
   // 按 Esc 關閉
   document.addEventListener("keydown", (event) => {
