@@ -166,7 +166,7 @@
 .page-tabs .tab {
   flex: 1;
   padding: 13px;
-  border: 1px solid #e5dcf4;
+  border: 1px solid transparent;
   border-radius: 14px;
   background: #D9D9DC;
   color: #2C2C2E;
@@ -221,7 +221,7 @@
   margin-bottom: 12px;
   text-align: left;
   background: #FFFFFF;
-  border: 1px solid #ebe6f5;
+  border: 1px solid transparent;
   border-radius: 14px;
   cursor: pointer;
   font-size: 16px;
@@ -303,15 +303,6 @@
       color: #898397;
       font-size: 12px;
     }
-
-    /* 移除 Songs / Favorites 點擊時的紫色焦點框 */
-#homeTab:focus,
-#homeTab:focus-visible,
-#favoritesTab:focus,
-#favoritesTab:focus-visible {
-  outline: none;
-  box-shadow: none;
-}
     
     /* 全站預設字體 */
 body {
@@ -444,7 +435,9 @@ h2,
   font-weight: 700;
 }
 
-
+html {
+  overflow-y: scroll;
+}
 
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
