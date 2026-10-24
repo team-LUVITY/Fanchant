@@ -913,13 +913,13 @@ if (wasSwiping) {
   }, 700);
 }
 
-      // 只處理明顯的左右滑動
-      if (
-        Math.abs(deltaX) < 40 ||
-        Math.abs(deltaX) < Math.abs(deltaY) * 1.2
-      ) {
-        return;
-      }
+  // 讓左右滑動更靈敏
+if (
+  Math.abs(deltaX) < 25 ||
+  Math.abs(deltaX) < Math.abs(deltaY) * 1.1
+) {
+  return;
+}
 
       if (isTransitioning) return;
 
