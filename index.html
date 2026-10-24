@@ -287,6 +287,16 @@
       color: #898397;
       font-size: 12px;
     }
+
+    /* 移除 Songs / Favorites 點擊時的紫色焦點框 */
+#homeTab:focus,
+#homeTab:focus-visible,
+#favoritesTab:focus,
+#favoritesTab:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+    
     /* 全站預設字體 */
 body {
   font-family: "Archivo Black", "Gmarket Sans", sans-serif;
