@@ -347,7 +347,6 @@ h2,
   border-radius: 10px;
   background: #D9D9DC;
   margin: 0 auto 20px;
-  touch-action: none;
 }
 
 .link-sheet h2 {
@@ -1106,26 +1105,25 @@ linkOverlay.classList.add("show");
   });
 
   
-  // 只有從彈窗頂部提示線下滑才關閉
-const dragHandle = linkSheet.querySelector(".sheet-handle");
-let touchStartY = 0;
-let touchStartX = 0;
+ 
+  // 在白色彈窗內向下滑動關閉
+  let touchStartY = 0;
+  let touchStartX = 0;
 
-if (dragHandle) {
-  dragHandle.addEventListener("touchstart", (event) => {
+  linkSheet.addEventListener("touchstart", (event) => {
     touchStartY = event.touches[0].clientY;
     touchStartX = event.touches[0].clientX;
   }, { passive: true });
 
-  dragHandle.addEventListener("touchend", (event) => {
+  linkSheet.addEventListener("touchend", (event) => {
     const deltaY = event.changedTouches[0].clientY - touchStartY;
     const deltaX = event.changedTouches[0].clientX - touchStartX;
 
-    if (deltaY > 60 && deltaY > Math.abs(deltaX)) {
+    if (deltaY > 70 && deltaY > Math.abs(deltaX) * 1.2) {
       linkOverlay.classList.remove("show");
     }
   }, { passive: true });
-}
+
 
 
   // 按 Esc 關閉
