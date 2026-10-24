@@ -5946,17 +5946,6 @@ function renderLyrics() {
     line.className = "lyric-line";
     line.dataset.index = index;
 
-    // 點擊歌詞，讓影片跳到對應時間
-    line.style.cursor = "pointer";
-
-line.addEventListener("click", () => {
-  if (!player || typeof player.seekTo !== "function") {
-    return;
-  }
-
-  player.seekTo(lyric.time, true);
-  showLyric(index);
-});
 
     // 新格式：同一句有多種顏色
     if (lyric.parts) {
@@ -5981,20 +5970,20 @@ line.addEventListener("click", () => {
 }
 
 function showLyric(index) {
-  currentIndex = Math.max(
-    0,
-    Math.min(index, lyrics.length - 1)
-  );
+  currentIndex = index;
 
   const lines = lyricsBox.querySelectorAll(".lyric-line");
 
   lines.forEach((line, i) => {
-    line.classList.toggle("active", i === currentIndex);
+    line.classList.toggle(
+  "active",
+  currentIndex >= 0 && i === currentIndex
+);
 
     const parts = line.querySelectorAll("span");
 
     parts.forEach((part) => {
-    if (i <= currentIndex) {
+    if (currentIndex >= 0 && i <= currentIndex) {
   part.style.color = part.dataset.color;
 } else {
   part.style.color = "#aaa3bd";
@@ -6002,7 +5991,8 @@ function showLyric(index) {
     });
   });
 
-  const activeLine = lines[currentIndex];
+  const activeLine =
+  currentIndex >= 0 ? lines[currentIndex] : null;
 
   if (activeLine) {
     const container = lyricsBox;
@@ -6028,11 +6018,6 @@ function syncLyrics() {
     return;
   }
 
-  // 影片暫停或尚未播放時，不更新歌詞
-  if (player.getPlayerState() !== YT.PlayerState.PLAYING) {
-    return;
-  }
-
   const time = player.getCurrentTime();
 
   // 找出目前時間對應的歌詞
@@ -6046,14 +6031,11 @@ function syncLyrics() {
     }
   }
 
-  // 只有歌詞句數改變時才更新畫面
-  if (index !== currentIndex) {
-    currentIndex = index;
-
-    if (index >= 0) {
-      showLyric(index);
-    }
-  }
+  // 歌詞句數改變時更新畫面，倒回第一句前也重設顏色
+if (index !== currentIndex) {
+  currentIndex = index;
+  showLyric(index);
+}
 }
 
   // 使用 YouTube 官方 IFrame Player API。
