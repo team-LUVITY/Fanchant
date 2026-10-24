@@ -93,12 +93,12 @@
 /* 下方切換圓點 */
 .carousel-dots {
   position: absolute;
-  bottom: 14px;
+  bottom: 8px;
   left: 0;
   right: 0;
   display: flex;
   justify-content: center;
-  gap: 9px;
+  gap: 6px;
 }
 
 .carousel-dots .dot {
@@ -722,6 +722,7 @@ updateStar();
 
     updateStar();
     star.classList.toggle("is-favorite", favoriteSongs.has(name));
+    applySongFilter();
   }
 
   star.addEventListener("click", toggleFavorite);
@@ -734,8 +735,6 @@ updateStar();
 
   song.appendChild(star);
 });
-
-
 
 search.addEventListener("input", applySongFilter);
 
