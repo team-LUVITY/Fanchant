@@ -356,32 +356,6 @@ h2,
 }
 
 
-/* 彈窗頂部的下滑關閉區域 */
-.sheet-drag-handle {
-  display: none;
-}
-
-@media (max-width: 600px) {
-  .sheet-drag-handle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 32px;
-    width: 100%;
-    cursor: grab;
-    touch-action: pan-y;
-  }
-
-  .sheet-drag-handle span {
-    display: block;
-    width: 36px;
-    height: 4px;
-    border-radius: 999px;
-    background: #D9D9DC;
-  }
-}
-
-
 /* 連結清單 */
 .official-links {
   display: flex;
@@ -479,9 +453,6 @@ h2,
 <!-- 官方連結底部彈窗 -->
 <div class="link-overlay" id="linkOverlay">
   <div class="link-sheet" id="linkSheet">
-    <div class="sheet-drag-handle">
-  <span></span>
-</div>
     <div class="sheet-handle"></div>
 
     <h2 id="linkSheetTitle">CRAVITY OFFICIAL</h2>
@@ -1133,26 +1104,26 @@ linkOverlay.classList.add("show");
   });
 
   
-  // 只有從彈窗頂部下滑才關閉
-  const dragHandle = linkSheet.querySelector(".sheet-drag-handle");
-  let touchStartY = 0;
-  let touchStartX = 0;
+  // 只有從彈窗頂部提示線下滑才關閉
+const dragHandle = linkSheet.querySelector(".sheet-handle");
+let touchStartY = 0;
+let touchStartX = 0;
 
-  if (dragHandle) {
-    dragHandle.addEventListener("touchstart", (event) => {
-      touchStartY = event.touches[0].clientY;
-      touchStartX = event.touches[0].clientX;
-    }, { passive: true });
+if (dragHandle) {
+  dragHandle.addEventListener("touchstart", (event) => {
+    touchStartY = event.touches[0].clientY;
+    touchStartX = event.touches[0].clientX;
+  }, { passive: true });
 
-    dragHandle.addEventListener("touchend", (event) => {
-      const deltaY = event.changedTouches[0].clientY - touchStartY;
-      const deltaX = event.changedTouches[0].clientX - touchStartX;
+  dragHandle.addEventListener("touchend", (event) => {
+    const deltaY = event.changedTouches[0].clientY - touchStartY;
+    const deltaX = event.changedTouches[0].clientX - touchStartX;
 
-      if (deltaY > 60 && deltaY > Math.abs(deltaX)) {
-        linkOverlay.classList.remove("show");
-      }
-    }, { passive: true });
-  }
+    if (deltaY > 60 && deltaY > Math.abs(deltaX)) {
+      linkOverlay.classList.remove("show");
+    }
+  }, { passive: true });
+}
 
 
   // 按 Esc 關閉
