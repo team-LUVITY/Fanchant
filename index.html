@@ -247,14 +247,14 @@
   background: #fff5dc;
 }
 
-.song .favorite-star:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
 
-/* 星星點擊時短暫顯示圓圈 */
+/* 手機星星點擊時短暫顯示圓圈，點完不保留 */
 .song .favorite-star {
   -webkit-tap-highlight-color: transparent;
+}
+
+.song .favorite-star:active {
+  background: #D9D9DC;
 }
 
 .song .favorite-star:focus {
@@ -262,10 +262,12 @@
   box-shadow: none;
 }
 
-.song .favorite-star:active {
-  background: #D9D9DC;
-  border-radius: 50%;
+/* 保留鍵盤操作時的焦點提示 */
+.song .favorite-star:focus-visible {
+  outline: 2px solid #3A3A3C;
+  outline-offset: 2px;
 }
+
 
     .song strong {
   display: block;
@@ -1142,123 +1144,5 @@ window.addEventListener("pageshow", () => {
 });
 
   </script>
-  
-<!-- 背景音樂 -->
-<audio id="bgMusic" src="./music/background.mp3" loop preload="auto"></audio>
-
-<!-- 右上角音樂按鈕 -->
-<div id="musicWidget">
-  <button
-    id="musicToggle"
-    type="button"
-    aria-label="背景音樂設定"
-    aria-expanded="false"
-    title="背景音樂設定"
-  >
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M9 18V5l12-2v13" />
-      <circle cx="6" cy="18" r="3" />
-      <circle cx="18" cy="16" r="3" />
-    </svg>
-  </button>
-
-  <div id="musicPanel" hidden>
-    <div class="music-panel-title">Background Music</div>
-
-    <label for="musicVolume">音量</label>
-    <input
-      id="musicVolume"
-      type="range"
-      min="0"
-      max="100"
-      value="35"
-    >
-
-    <button id="musicMute" type="button">關閉音樂</button>
-    <p id="musicStatus" aria-live="polite">正在嘗試播放…</p>
-  </div>
-</div>
-
-
-<script>
-  const bgMusic = document.getElementById("bgMusic");
-  const musicToggle = document.getElementById("musicToggle");
-  const musicPanel = document.getElementById("musicPanel");
-  const musicVolume = document.getElementById("musicVolume");
-  const musicMute = document.getElementById("musicMute");
-  const musicStatus = document.getElementById("musicStatus");
-
-  // 初始音量 35%，嘗試進入首頁後自動播放
-  bgMusic.volume = 0.35;
-
-  function updateMusicStatus() {
-    if (bgMusic.paused) {
-      musicStatus.textContent = "音樂已暫停";
-    } else if (bgMusic.muted || bgMusic.volume === 0) {
-      musicStatus.textContent = "音樂已靜音";
-    } else {
-      musicStatus.textContent = "音樂播放中";
-    }
-
-    musicMute.textContent =
-      bgMusic.muted ? "開啟音樂" : "關閉音樂";
-  }
-
-  function startMusic() {
-    bgMusic.play()
-      .then(() => {
-        updateMusicStatus();
-      })
-      .catch(() => {
-        musicStatus.textContent = "請點擊音樂按鈕開始播放";
-      });
-  }
-
-  // 嘗試自動播放
-  startMusic();
-
-  // 點擊右上角音符：展開或收起控制面板
-  musicToggle.addEventListener("click", () => {
-    const isOpening = musicPanel.hidden;
-    musicPanel.hidden = !isOpening;
-    musicToggle.setAttribute("aria-expanded", String(isOpening));
-
-    // 如果自動播放被瀏覽器阻擋，點擊後再嘗試播放
-    if (bgMusic.paused) {
-      startMusic();
-    }
-  });
-
-  // 調整音量
-  musicVolume.addEventListener("input", () => {
-    bgMusic.volume = Number(musicVolume.value) / 100;
-
-    if (bgMusic.volume > 0 && bgMusic.muted) {
-      bgMusic.muted = false;
-    }
-
-    updateMusicStatus();
-  });
-
-  // 靜音／恢復音樂
-  musicMute.addEventListener("click", () => {
-    if (bgMusic.paused) {
-      bgMusic.muted = false;
-      startMusic();
-      return;
-    }
-
-    bgMusic.muted = !bgMusic.muted;
-    updateMusicStatus();
-  });
-
-  // 音樂檔案錯誤時顯示提示
-  bgMusic.addEventListener("error", () => {
-    musicStatus.textContent = "找不到音樂檔，請檢查檔案路徑";
-  });
-</script>
-
-
-
 </body>
 </html>
