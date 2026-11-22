@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8"><!--  -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="icon" type="image/png" href="./images/luvity.jpg?v=2">
@@ -5873,6 +5873,53 @@ const lyricsBySong = {
     { time: 192, text: "(歡呼)", color: "#7CB342" },
 
   ],
+
+  "VITY PARK EP.121 MISSON SONG": [
+    { time: 812.8, 
+      parts: [
+        { text: "원 투 쓰리 포!\n", color: "#28243a" },
+        { text: "One Two Three Four!", color: "#87CEEB" }
+      ]
+    },
+    { time: 816, 
+      parts: [
+        { text: "크래비티와 함께 외쳐봐 야호!\n", color: "#28243a" },
+        { text: "克類比踢哇 和給 為秋bra 呀呼!", color: "#87CEEB" }
+      ]
+    },
+    { time: 819.5, 
+      parts: [
+        { text: "러비티도 함께 출~발!\n", color: "#28243a" },
+        { text: "露比踢都 和給 chu~吧!", color: "#87CEEB" }
+      ]
+    },
+
+    { time: 823, 
+      parts: [
+        { text: "크래비티 행복하자 매일매일 행복하자\n", color: "#28243a" },
+        { text: "克類比踢 ham波卡加 每一每一 ham波卡加", color: "#87CEEB" }
+      ]
+    },
+    { time: 826.5, 
+      parts: [
+        { text: "하늘 높이 콩콩콩 발을 구르고 야!\n", color: "#28243a" },
+        { text: "哈呢 努皮 空空空 趴了 咕了咕 呀!", color: "#87CEEB" }
+      ]
+    },
+
+    { time: 829.8, 
+      parts: [
+        { text: "행복한 크래비티 세상에서 제일 멋져\n", color: "#28243a" },
+        { text: "ham波看 克類比踢 se桑欸搜 je伊 摸就", color: "#87CEEB" }
+      ]
+    },
+    { time: 832.9, 
+      parts: [
+        { text: "함께라면 언제나 싱글벙글 패밀리\n", color: "#28243a" },
+        { text: "和給拉謬 翁je那 新歌蹦歌 配米粒", color: "#87CEEB" }
+      ]
+    },
+  ]
 };
 
   const params = new URLSearchParams(location.search);
@@ -5907,6 +5954,7 @@ const lyricsBySong = {
   "Lemonade Fever": "qdTimYc16_8",
   "AWAKE": "ggU9yodtuGo",
   "LOUDER": "hJt_0YEKqng",
+  "VITY PARK EP.121 MISSON SONG": "uL9LbQlaiEY",
 };
 
 const videoId = videoIds[songName] || videoIds[""];
@@ -5939,9 +5987,13 @@ const startTimes = {
   "Lemonade Fever": 10,
   "AWAKE": 12,
   "LOUDER": 12,
+  "VITY PARK EP.121 MISSON SONG": 811.8,
 };
 
 const startTime = startTimes[songName] || 0;
+const songEndTimes = {
+  "VITY PARK EP.121 MISSON SONG": 838,
+};
 
 const titleElement = document.getElementById("songTitle");
 
@@ -6069,6 +6121,14 @@ function syncLyrics() {
     typeof player.getCurrentTime !== "function" ||
     typeof player.getPlayerState !== "function"
   ) {
+    return;
+  }
+
+  const currentTime = player.getCurrentTime();
+  const stopTime = songEndTimes[songName];
+
+  if (stopTime && currentTime >= stopTime) {
+    player.pauseVideo();
     return;
   }
 
