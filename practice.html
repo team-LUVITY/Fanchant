@@ -6127,10 +6127,13 @@ function syncLyrics() {
   const currentTime = player.getCurrentTime();
   const stopTime = songEndTimes[songName];
 
-  if (stopTime && currentTime >= stopTime) {
-    player.pauseVideo();
-    return;
-  }
+if (stopTime && currentTime >= stopTime) {
+  player.cueVideoById({
+    videoId: videoIds[songName],
+    startSeconds: startTime
+  });
+  return;
+}
 
   // 影片暫停或尚未播放時，不更新歌詞
 if (player.getPlayerState() !== YT.PlayerState.PLAYING) {
